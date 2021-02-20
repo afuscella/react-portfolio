@@ -1,9 +1,10 @@
 import { DefaultTheme } from 'styled-components';
+import { typographyVariants } from './typographyVariants';
 
 const colors = {
   background: {
     light: {
-      color: '#fff',
+      color: '#e5e5e5',
     },
     main: {
       color: '#f2f2f2',
@@ -16,14 +17,19 @@ const colors = {
   },
   primary: {
     main: {
-      color: '',
+      color: '#32363a',
       contrastText: '#fff',
     },
   },
   secondary: {
     main: {
-      color: '',
+      color: '#070C0E',
       contrastText: '#fff',
+    },
+    light: {
+      color: '#88989E',
+      contrastText: '#fff',
+
     },
   },
   modes: {
@@ -31,9 +37,19 @@ const colors = {
   },
 };
 
+export const breakpoints = {
+  xs: 0, // extra small
+  sm: 480, // small
+  md: 768, // medium
+  lg: 992, // large
+  xl: 1200, // extra large
+};
+
 const theme: DefaultTheme = {
   colors,
-  fontFamily: '\'Raleway\', sans serif',
+  typographyVariants,
+  breakpoints,
+  fontFamily: '\'Rubik\', sans-serif',
 };
 
 export default theme;
