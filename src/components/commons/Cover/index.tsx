@@ -1,6 +1,5 @@
 import React from 'react';
 
-// eslint-disable-next-line import/no-unresolved
 import { Text } from '@/components/foundation/Text';
 
 import { CoverWrapper } from './styles';

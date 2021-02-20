@@ -25,7 +25,7 @@
       ],
       "@/components/*": [
         "./src/components/*"
-      ],
+      ]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -36,8 +36,8 @@
     "node_modules"
   ],
   "include": [
-    "@types/next-env.d.ts",
-    "@types/styled.d.ts",
+    "next-env.d.ts",
+    "styled.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]
