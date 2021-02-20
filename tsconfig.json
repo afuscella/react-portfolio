@@ -23,6 +23,9 @@
       "@/themes/*": [
         "./src/themes/*"
       ],
+      "@/components/*": [
+        "./src/components/*"
+      ],
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
