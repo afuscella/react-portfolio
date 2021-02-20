@@ -1,12 +1,9 @@
 /* eslint-disable import/prefer-default-export */
 import { css } from 'styled-components';
-import { breakpointsMedia } from '@/themes/utils/breakPointsMedia';
 
-interface IPropToStyle {
-  propName: string;
-}
+import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
-export function propToStyle({ propName }: IPropToStyle) {
+export function propToStyle(propName: string) {
   return (props: { [x: string]: any; }) => {
     const propValue = props[propName];
 

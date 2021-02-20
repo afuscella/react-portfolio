@@ -1,6 +1,3 @@
-/* eslint-disable import/prefer-default-export */
-// eslint-disable-next-line import/prefer-default-export
-
 export interface ITypographyVariants {
   title: {
     fontSize: string;
