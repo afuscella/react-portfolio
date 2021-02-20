@@ -1,3 +1,5 @@
+import { DefaultTheme } from 'styled-components';
+
 const colors = {
   background: {
     light: {
@@ -27,11 +29,11 @@ const colors = {
   tertiary: {
     main: {
       color: '',
-      contrastText: '#fff'
+      contrastText: '#fff',
     },
     light: {
       color: '',
-      contrastText: '#fff'
+      contrastText: '#fff',
     },
   },
   modes: {
@@ -39,7 +41,8 @@ const colors = {
   },
 };
 
-export default {
-  colors,
+const theme: DefaultTheme = {
   fontFamily: '\'Raleway\', sans serif',
-}
+};
+
+export default theme;
