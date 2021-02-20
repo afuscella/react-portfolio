@@ -1,8 +1,8 @@
 import 'styled-components';
+import { ITypographyVariants } from '@/themes/typographyVariants';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    fontFamily: string;
     colors: {
       background: {
         light: {
@@ -32,6 +32,15 @@ declare module 'styled-components' {
       modes: {
         dark: {};
       };
-    }
+    },
+    breakpoints: {
+      xs: number;
+      sm: number;
+      md: number;
+      lg: number;
+      xl: number;
+    },
+    fontFamily: string;
+    typographyVariants: ITypographyVariants;
   }
 }
