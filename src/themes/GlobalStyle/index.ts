@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    /* font-family: */
+    font-family: ${({ theme }) => theme.fontFamily};
   }
 
   /* full height layout */

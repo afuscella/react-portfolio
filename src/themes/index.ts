@@ -40,5 +40,6 @@ const colors = {
 };
 
 export default {
-  colors
+  colors,
+  fontFamily: '\'Raleway\', sans serif',
 }
