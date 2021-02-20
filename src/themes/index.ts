@@ -26,22 +26,13 @@ const colors = {
       contrastText: '#fff',
     },
   },
-  tertiary: {
-    main: {
-      color: '',
-      contrastText: '#fff',
-    },
-    light: {
-      color: '',
-      contrastText: '#fff',
-    },
-  },
   modes: {
     dark: {},
   },
 };
 
 const theme: DefaultTheme = {
+  colors,
   fontFamily: '\'Raleway\', sans serif',
 };
 
