@@ -18,11 +18,18 @@ export function Cover() {
 
       <Text
         variant="subTitle"
-        tag="p"
+        tag="span"
         color="secondary.light"
       >
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
+        SAP specialist and software architech. Enthusiastic of new technologies.
+      </Text>
+
+      <Text
+        variant="subTitle"
+        tag="span"
+        color="secondary.light"
+      >
+        Bachelor in Computer Science
       </Text>
 
     </CoverWrapper>

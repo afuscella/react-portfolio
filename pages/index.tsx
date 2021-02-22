@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Box } from '@/components/foundation/layout/Container';
 import { Cover } from '@/components/commons/Cover';
+import { Menu } from '@/components/commons/Menu';
 import { Grid } from '@/components/foundation/layout/Grid';
 
 export default function Home() {
@@ -13,9 +14,10 @@ export default function Home() {
       flexDirection="column"
       justifyContent="space-between"
     >
+      <Menu />
+      <Cover />
       <Grid.Container>
         <Grid.Row>
-          <Cover />
         </Grid.Row>
       </Grid.Container>
     </Box>

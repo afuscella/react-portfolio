@@ -7,7 +7,7 @@ export const CoverWrapper = styled.div`
   font-family: ${({ theme }) => theme.fontFamily};
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
   flex-wrap: wrap;
