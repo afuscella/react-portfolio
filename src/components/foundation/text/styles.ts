@@ -3,6 +3,18 @@ import get from 'lodash/get';
 
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
+const smallestException = css`
+  font-size: ${({ theme }) => theme.typographyVariants.smallestException.fontSize};
+  font-weight: ${({ theme }) => theme.typographyVariants.smallestException.fontWeight};
+  line-height: ${({ theme }) => theme.typographyVariants.smallestException.lineHeight};
+`;
+
+const paragraph1 = css`
+  font-size: ${({ theme }) => theme.typographyVariants.paragraph1.fontSize};
+  font-weight: ${({ theme }) => theme.typographyVariants.paragraph1.fontWeight};
+  line-height: ${({ theme }) => theme.typographyVariants.paragraph1.lineHeight};
+`;
+
 const title = css`
   ${({ theme }) => css`
     font-size: ${theme.typographyVariants.titleXS.fontSize};
@@ -10,14 +22,14 @@ const title = css`
     line-height: ${theme.typographyVariants.titleXS.lineHeight};
   `}
   ${breakpointsMedia({
-    md: css`
+  md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.title.fontSize};
         font-weight: ${theme.typographyVariants.title.fontWeight};
         line-height: ${theme.typographyVariants.title.lineHeight};
     `}
   `,
-  })}
+})}
 `;
 
 const subTitle = css`
@@ -27,6 +39,8 @@ const subTitle = css`
 `;
 
 export const TextStyleVariantMap = {
+  smallestException,
+  paragraph1,
   title,
   subTitle,
 };

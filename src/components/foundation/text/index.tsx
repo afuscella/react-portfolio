@@ -30,11 +30,12 @@ export function Text({
 Text.propTypes = {
   color: PropTypes.string.isRequired,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
-  variant: PropTypes.oneOf(['title', 'subTitle']),
+  variant: PropTypes.oneOf(['smallestException', 'title', 'subTitle']),
   children: PropTypes.node.isRequired,
 };
 
 Text.defaultProps = {
   tag: 'span',
   variant: 'title',
+  color: '#000'
 };

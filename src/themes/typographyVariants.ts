@@ -1,4 +1,14 @@
 export interface ITypographyVariants {
+  smallestException: {
+    fontSize: string;
+    fontWeight: string;
+    lineHeight: number;
+  };
+  paragraph1: {
+    fontSize: string;
+    fontWeight: string;
+    lineHeight: number;
+  }
   title: {
     fontSize: string;
     fontWeight: string;
@@ -17,6 +27,18 @@ export interface ITypographyVariants {
 }
 
 export const typographyVariants: ITypographyVariants = {
+  // [paragraph1]
+  paragraph1: {
+    fontSize: '16px',
+    fontWeight: '400',
+    lineHeight: 1.25, // 125%
+  },
+  // [smallestException]
+  smallestException: {
+    fontSize: '12px',
+    fontWeight: '400',
+    lineHeight: 1,
+  },
   // [title]
   title: {
     fontSize: '32px',
