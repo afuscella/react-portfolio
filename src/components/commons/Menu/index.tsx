@@ -5,7 +5,7 @@ import { MenuWrapper } from './styles';
 
 export function Menu() {
   return (
-    <MenuWrapper>
+    <MenuWrapper.Menu>
       <MenuWrapper.LeftSide>
         <Text
           variant='smallestException'
@@ -21,6 +21,6 @@ export function Menu() {
         <img src='images/moon.svg' />
       </MenuWrapper.RightSide>
 
-    </MenuWrapper>
+    </MenuWrapper.Menu>
   );
 }
