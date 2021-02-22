@@ -20,11 +20,11 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/themes/*": [
-        "./src/themes/*"
-      ],
       "@/components/*": [
-        "./src/components/*"
+        "src/components/*"
+      ],
+      "@/themes/*": [
+        "src/themes/*"
       ]
     },
     "esModuleInterop": true,
