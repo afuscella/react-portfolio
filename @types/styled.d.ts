@@ -40,7 +40,8 @@ declare module 'styled-components' {
       lg: number;
       xl: number;
     },
-    fontFamily: string;
     typographyVariants: ITypographyVariants;
+    transition: string;
+    fontFamily: string;
   }
 }

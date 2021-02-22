@@ -36,8 +36,8 @@
     "node_modules"
   ],
   "include": [
-    "next-env.d.ts",
-    "styled.d.ts",
+    "@types/next-env.d.ts",
+    "@types/styled.d.ts",
     "**/*.ts",
     "**/*.tsx"
   ]
