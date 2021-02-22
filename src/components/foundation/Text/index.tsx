@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 // eslint-disable-next-line import/no-unresolved
@@ -8,7 +8,8 @@ interface IText {
   tag: any;
   variant: string;
   color: string;
-  children: React.ReactNode;
+  href?: string;
+  children?: ReactNode | ReactNode[];
 }
 
 // eslint-disable-next-line import/prefer-default-export

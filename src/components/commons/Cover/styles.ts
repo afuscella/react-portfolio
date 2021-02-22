@@ -9,7 +9,6 @@ export const CoverWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  text-align: center;
   flex-wrap: wrap;
   flex-direction: column;
   ${breakpointsMedia({

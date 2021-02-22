@@ -43,7 +43,6 @@ const colors = {
     light: {
       color: '#88989E',
       contrastText: '#fff',
-
     },
   },
   modes: {

@@ -28,6 +28,10 @@ declare module 'styled-components' {
           color: string;
           contrastText: string;
         };
+        light: {
+          color: string;
+          contrastText: string;
+        }
       };
       modes: {
         dark: {};
