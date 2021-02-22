@@ -16,9 +16,11 @@ const GlobalStyle = createGlobalStyle`
   /* full height layout */
   html,
   body {
+    background: ${({ theme }) => theme.body};
     display: flex;
     min-height: 100vh;
     width: 100%;
+    transition: all 200ms ease-in-out;
   }
   #__next {
     flex: 1;
