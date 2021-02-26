@@ -44,6 +44,7 @@ declare module 'styled-components' {
       lg: number;
       xl: number;
     },
+    offset: number;
     typographyVariants: ITypographyVariants;
     transition: string;
     fontFamily: string;
