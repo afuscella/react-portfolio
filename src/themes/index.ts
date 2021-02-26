@@ -18,10 +18,10 @@ export const darkTheme = {
 const colors = {
   background: {
     light: {
-      color: '#e5e5e5',
+      color: '#f0f0f0',
     },
     main: {
-      color: '#f2f2f2',
+      color: '#e5e5e5',
     },
   },
   borders: {
@@ -37,7 +37,7 @@ const colors = {
   },
   secondary: {
     main: {
-      color: '#070C0e',
+      color: '#2c3248',
       contrastText: '#fff',
     },
     light: {

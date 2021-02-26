@@ -1,14 +1,19 @@
 export interface ITypographyVariants {
+  paragraph1: {
+    fontSize: string;
+    fontWeight: string;
+    lineHeight: number;
+  };
+  paragraph2: {
+    fontSize: string;
+    fontWeight: string;
+    lineHeight: number;
+  };
   smallestException: {
     fontSize: string;
     fontWeight: string;
     lineHeight: number;
   };
-  paragraph1: {
-    fontSize: string;
-    fontWeight: string;
-    lineHeight: number;
-  }
   title: {
     fontSize: string;
     fontWeight: string;
@@ -29,8 +34,14 @@ export interface ITypographyVariants {
 export const typographyVariants: ITypographyVariants = {
   // [paragraph1]
   paragraph1: {
-    fontSize: '16px',
+    fontSize: '14px',
     fontWeight: '400',
+    lineHeight: 1.25, // 125%
+  },
+  // [paragraph2]
+  paragraph2: {
+    fontSize: '14px',
+    fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
   // [smallestException]
@@ -41,13 +52,13 @@ export const typographyVariants: ITypographyVariants = {
   },
   // [title]
   title: {
-    fontSize: '32px',
+    fontSize: '38px',
     fontWeight: '700',
     lineHeight: 1.25, // 125%
   },
   // [titleXS]
   titleXS: {
-    fontSize: '24px',
+    fontSize: '30px',
     fontWeight: '600',
     lineHeight: 1.25, // 125%
   },
