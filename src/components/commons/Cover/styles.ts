@@ -1,28 +1,70 @@
 /* eslint-disable import/no-unresolved */
 import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
-// eslint-disable-next-line import/prefer-default-export
-export const CoverWrapper = styled.div`
-  font-family: ${({ theme }) => theme.fontFamily};
-  flex: 1;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  ${breakpointsMedia({
-    md: css`
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 768px;
-      width: 100%;
-    `,
+import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
+import { propToStyle } from '@/themes/utils/propToStyle';
+
+export const CoverWrapper = {
+  Cover: styled.section`
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    min-height: 85vh;
+    font-family: ${({ theme }) => theme.fontFamily};
+
+    ${breakpointsMedia({
+      xs: css`
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+
+      `,
+      md: css`
+        padding-right: 16px;
+        padding-left: 16px; 
+        max-width: 768px;
+        width: 100%;
+      `,
     lg: css`
-      max-width: 1160px;
-    `,
+        max-width: 1160px;
+      `,
     xl: css`
-      max-width: 1222px;
-    `,
+        max-width: 1222px;
+      `,
   })}
-`;
+
+    ${propToStyle('marginTop')};
+
+  `,
+
+  Header: styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50%;
+    img {
+      border-radius: 50%;
+    }
+  `,
+
+  Content: styled.div`
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    ${breakpointsMedia({
+      xs: css`
+        width: 100%;
+        height: 100%;
+      `,
+      md: css`
+        width: 50%;
+        height: 50%;
+      `,
+  })}
+  `
+}

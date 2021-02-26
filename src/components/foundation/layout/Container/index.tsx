@@ -8,6 +8,9 @@ interface IContainer {
   flexWrap: string;
   flexDirection: string;
   justifyContent: string;
+  backgroundImage: string;
+  backgroundRepeat: string;
+  backgroundPosition: string;
 }
 
 // eslint-disable-next-line import/prefer-default-export
@@ -17,6 +20,7 @@ export const Box = styled.div<IContainer>`
   ${propToStyle('flexDirection')}
   ${propToStyle('justifyContent')}
   ${propToStyle('flexWrap')}
+  ${propToStyle('background')}
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}

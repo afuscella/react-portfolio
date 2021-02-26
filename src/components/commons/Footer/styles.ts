@@ -1,25 +1,40 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
-export const FooterWrapper = styled.footer`
-  padding: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 4px;
-  border: 1px solid #88989E10;
-  background: ${({ theme }) => `${theme.colors.secondary.light.color}10`};
+export const FooterWrapper = {
+  Footer: styled.footer`
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 4px;
+    display: flex;
+    ${breakpointsMedia({
+      xs: css`
+        justify-content: center;
+      `,
+      md: css`
+        justify-content: flex-start;
+      `
+     })
+    }
+  `,
 
-img {
-  width: 32px;
-  margin-right: 23px;
+  Icon: styled.div`
+    margin-right: 20px;
+    img {
+      width: 32px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+    a {
+      text-decoration: none;
+      cursor: pointer;
+      color: ${({ theme }) => theme.colors.secondary.light.color};
+      transition: ${({ theme }) => theme.transition};
+      &:hover,
+      &:focus {
+        opacity: .5;
+      }
+    }
+  `,
 }
-a {
-  color: ${({ theme }) => theme.colors.primary.main.color};
-  text-decoration: none;
-  transition: .3s;
-    &:hover,
-    &:focus {
-    opacity: .5;
-  }
-}
-`;
