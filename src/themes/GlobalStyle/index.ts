@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
   /* full height layout */
   html,
   body {
-    background: ${({ theme }) => theme.colors.background.light.color};
+    background: ${({ theme }) => theme.colors.light.background.light.color};
     display: flex;
     min-height: 100vh;
     width: 100%;
