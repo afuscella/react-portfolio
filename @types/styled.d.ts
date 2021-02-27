@@ -1,41 +1,11 @@
 import 'styled-components';
 import { ITypographyVariants } from '@/themes/typographyVariants';
-
+import { ModeType } from '@/types/themeModeType';
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      background: {
-        light: {
-          color: string;
-        };
-        main: {
-          color: string;
-        };
-      };
-      borders: {
-        main: {
-          color: string;
-        };
-      };
-      primary: {
-        main: {
-          color: string;
-          contrastText: string;
-        };
-      };
-      secondary: {
-        main: {
-          color: string;
-          contrastText: string;
-        };
-        light: {
-          color: string;
-          contrastText: string;
-        }
-      };
-      modes: {
-        dark: {};
-      };
+      light: ModeType;
+      dark: ModeType;
     },
     breakpoints: {
       xs: number;
@@ -44,7 +14,6 @@ declare module 'styled-components' {
       lg: number;
       xl: number;
     },
-    offset: number;
     typographyVariants: ITypographyVariants;
     transition: string;
     fontFamily: string;
