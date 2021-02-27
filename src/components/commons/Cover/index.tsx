@@ -26,7 +26,7 @@ export function Cover({ ...props }) {
         <Text
           variant="paragraph1"
           tag="p"
-          color="primary.main"
+          color="secondary.main"
           textAlign={{
             xs: 'center',
             md: 'start'
@@ -38,7 +38,7 @@ export function Cover({ ...props }) {
         <Text
           variant="paragraph1"
           tag="p"
-          color="primary.main"
+          color="secondary.main"
           textAlign={{
             xs: 'center',
             md: 'start'

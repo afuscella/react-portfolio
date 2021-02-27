@@ -19,7 +19,7 @@ export function Card({ title, description, image, uri }: ICard) {
         <Text
           variant="paragraph2"
           tag="span"
-          color="tertiary.main"
+          color="secondary.main"
         >
           {title}
         </Text>
@@ -27,7 +27,7 @@ export function Card({ title, description, image, uri }: ICard) {
         <Text
           variant="paragraph1"
           tag="p"
-          color="tertiary.main"
+          color="secondary.main"
         >
           {description}
         </Text>

@@ -25,9 +25,9 @@ export function Projects() {
       </Text>
 
       <Grid.Container>
-
         <Grid.Row>
-          <Grid.Column
+
+        <Grid.Column
             value={{ xs: 12, md: 6 }}
             display="flex"
             alignItems="center"
@@ -37,7 +37,7 @@ export function Projects() {
 
             <Card
               title='Breja Quiz | Happy Hour'
-              description='Do you really think you know everything about beers?, So come and join this trivial and try to not get drunk answering the questions.'
+              description='Do you really think you know everything about beers?'
               uri='https://bitter-brewing-quiz.afuscella.vercel.app/'
               image='images/beer.png'
             />

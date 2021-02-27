@@ -2,8 +2,10 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const ProjectsWrapper = styled.div`
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
   ${breakpointsMedia({
     xs: css`

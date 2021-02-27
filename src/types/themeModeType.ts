@@ -22,5 +22,15 @@ export type ModeType = {
       color: string;
       contrastText: string;
     }
+  },
+  tertiary: {
+    main: {
+      color: string;
+      contrastText: string;
+    };
+    light: {
+      color: string;
+      contrastText: string;
+    }
   };
 }

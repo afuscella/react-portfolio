@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { motion } from 'framer-motion';
 import { ThemeContext } from 'styled-components';
 
 import { Text } from '@/components/foundation/Text';
@@ -18,13 +19,22 @@ export function Menu() {
   }, {
     id: 3,
     text: 'Contact me',
-    url: '/mail'
+    url: 'mailto:fuscellaarthur@gmail.com'
   }];
 
-  const { toggleThemeMode } = useContext(ThemeContext);
+  // const { toggleThemeMode } = useContext(ThemeContext);
 
   return (
-    <MenuWrapper.Menu>
+    <MenuWrapper.Menu
+      as={motion.nav}
+      transition={{ delay: 0.5, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <MenuWrapper.LeftSide>
         <img src='icons/code.svg' />
       </MenuWrapper.LeftSide>
@@ -41,8 +51,6 @@ export function Menu() {
 
       <MenuWrapper.RightSide>
         <DarkMode />
-        {/* <img src='icons/sun.svg' /> */}
-        {/* <img src='icons/moon.svg' /> */}
       </MenuWrapper.RightSide>
 
     </MenuWrapper.Menu>

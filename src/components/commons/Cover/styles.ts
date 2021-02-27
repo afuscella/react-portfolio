@@ -11,15 +11,13 @@ export const CoverWrapper = {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    min-height: 90vh;
     font-family: ${({ theme }) => theme.fontFamily};
-
+    min-height: 85vh;
     ${breakpointsMedia({
       xs: css`
         margin-left: auto;
         margin-right: auto;
         padding: 10px;
-        min-height: 100vh;
       `,
       md: css`
         padding-right: 16px;

@@ -87,5 +87,5 @@ export const TextBase = styled.span<ITextBase>`
   ${propToStyle('padding')}
 
   ${({ variant }) => TextStyleVariantMap[variant]};
-  color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};
+  color: ${({ theme, color }) => get(theme, `colors.light.${color}.color`)};
 `;

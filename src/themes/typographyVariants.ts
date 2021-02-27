@@ -50,7 +50,7 @@ export const typographyVariants: ITypographyVariants = {
   },
   // [paragraph2]
   paragraph2: {
-    fontSize: '24px',
+    fontSize: '20px',
     fontWeight: '600',
     lineHeight: 1.25, // 125%
   },

@@ -19,13 +19,23 @@ const light: ModeType = {
   },
   secondary: {
     main: {
-      color: '#2c3248',
+      color: '#a2a9c1',
       contrastText: '#fff',
     },
     light: {
       color: '#88989E',
       contrastText: '#fff',
     },
+  },
+  tertiary: {
+    main: {
+      color: '#e3e6ea',
+      contrastText: '#fff',
+    }
+  },
+  light: {
+    color: '#88989E',
+    contrastText: '#fff',
   },
 };
 
@@ -46,7 +56,7 @@ const dark: ModeType = {
   },
   secondary: {
     main: {
-      color: '#2c3248',
+      color: '#a2a9c1',
       contrastText: '#fff',
     },
     light: {
@@ -61,7 +71,7 @@ const colors = {
   dark: dark,
 };
 
-let mode: string = 'dark';
+let mode: string = 'light';
 export function toggleThemeMode() {
   if (mode === 'dark') {
     mode = 'light';

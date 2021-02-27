@@ -9,7 +9,7 @@ export const CardWrapper = {
     text-decoration: none;
     flex-direction: row;
     margin-bottom: 12px;
-    background: white;
+    background: ${({ theme}) => theme.colors.light.tertiary.main.color};
     box-shadow: 0 1px 1px rgb(0 0 0 / 35%);
     width: 450px;
     ${breakpointsMedia({
@@ -29,7 +29,7 @@ export const CardWrapper = {
 
     &:hover,
     &:focus {
-      opacity: .6;
+      opacity: .5;
       transition: ${({ theme }) => theme.transition};
       cursor: pointer;
     }
