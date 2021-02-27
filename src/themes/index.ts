@@ -32,7 +32,7 @@ const light: ModeType = {
 const dark: ModeType = {
   background: {
     light: {
-      color: '#f0f0f0',
+      color: '#000',
     },
     main: {
       color: '#e5e5e5',
@@ -61,6 +61,16 @@ const colors = {
   dark: dark,
 };
 
+let mode: string = 'dark';
+export function toggleThemeMode() {
+  if (mode === 'dark') {
+    mode = 'light';
+  }
+  else {
+    mode = 'dark';
+  };
+};
+
 export const breakpoints = {
   xs: 0, // extra small
   sm: 480, // small
@@ -71,6 +81,7 @@ export const breakpoints = {
 
 const theme: DefaultTheme = {
   colors,
+  mode,
   typographyVariants,
   breakpoints,
   transition: '200ms ease-in-out',

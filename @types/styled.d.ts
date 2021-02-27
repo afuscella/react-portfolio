@@ -7,6 +7,7 @@ declare module 'styled-components' {
       light: ModeType;
       dark: ModeType;
     },
+    mode: string;
     breakpoints: {
       xs: number;
       sm: number;
