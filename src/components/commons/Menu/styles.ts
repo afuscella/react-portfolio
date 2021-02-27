@@ -14,9 +14,6 @@ export const MenuWrapper = {
     padding-left: 28px;
     padding-right: 28px;
     ${breakpointsMedia({
-      sm: css`
-        height: 7vh;
-      `,
       md: css`
         justify-content: flex-start;
         margin-left: auto;

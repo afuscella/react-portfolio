@@ -51,7 +51,7 @@ export function Cover({ ...props }) {
       </CoverWrapper.Content>
 
       <CoverWrapper.Header>
-        <img src='images/me.png' />
+        <img src='images/me.jfif' />
       </CoverWrapper.Header>
 
     </CoverWrapper.Cover>

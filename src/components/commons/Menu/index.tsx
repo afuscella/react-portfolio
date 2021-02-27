@@ -1,5 +1,8 @@
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+
 import { Text } from '@/components/foundation/Text';
-import React from 'react';
+import { DarkMode } from '@/components/commons/DarkMode';
 
 import { MenuWrapper } from './styles';
 
@@ -18,6 +21,8 @@ export function Menu() {
     url: '/mail'
   }];
 
+  const { toggleThemeMode } = useContext(ThemeContext);
+
   return (
     <MenuWrapper.Menu>
       <MenuWrapper.LeftSide>
@@ -35,8 +40,9 @@ export function Menu() {
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.RightSide>
-        <img src='icons/sun.svg' />
-        <img src='icons/moon.svg' />
+        <DarkMode />
+        {/* <img src='icons/sun.svg' /> */}
+        {/* <img src='icons/moon.svg' /> */}
       </MenuWrapper.RightSide>
 
     </MenuWrapper.Menu>

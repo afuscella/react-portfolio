@@ -1,4 +1,6 @@
-import styled, { css } from 'styled-components';
+import React, { useContext } from 'react';
+import styled, { css, ThemeContext } from 'styled-components';
+
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const FooterWrapper = {
@@ -9,13 +11,13 @@ export const FooterWrapper = {
     border-radius: 4px;
     display: flex;
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         justify-content: center;
       `,
-      md: css`
+    md: css`
         justify-content: flex-start;
       `
-     })
+  })
     }
   `,
 
