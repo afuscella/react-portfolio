@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function Github(props) {
   console.log(props);
   return (
