@@ -19,13 +19,12 @@ export const CoverWrapper = {
         margin-left: auto;
         margin-right: auto;
         padding: 10px;
-
+        min-height: 100vh;
       `,
       md: css`
         padding-right: 16px;
         padding-left: 16px; 
         max-width: 768px;
-        width: 100%;
       `,
       lg: css`
         max-width: 1160px;
@@ -44,7 +43,6 @@ export const CoverWrapper = {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 25%;
 
     ${breakpointsMedia({
       xs: css`
@@ -57,6 +55,7 @@ export const CoverWrapper = {
 
     img {
       border-radius: 50%;
+      width: 100%
     }
   `,
 

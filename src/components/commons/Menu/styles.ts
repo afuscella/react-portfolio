@@ -13,9 +13,11 @@ export const MenuWrapper = {
     margin-top: 21px;
     padding-left: 28px;
     padding-right: 28px;
-    height: 7vh;
     ${breakpointsMedia({
-    md: css`
+      sm: css`
+        height: 7vh;
+      `,
+      md: css`
         justify-content: flex-start;
         margin-left: auto;
         margin-right: auto;

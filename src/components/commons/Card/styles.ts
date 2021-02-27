@@ -8,7 +8,8 @@ export const CardWrapper = {
     border-radius: 4px;
     text-decoration: none;
     flex-direction: row;
-    margin-bottom: 32px;
+    margin-bottom: 12px;
+    background: white;
     box-shadow: 0 1px 1px rgb(0 0 0 / 35%);
     width: 450px;
     ${breakpointsMedia({
@@ -34,7 +35,7 @@ export const CardWrapper = {
     }
 
     article {
-      padding: 1rem;
+      padding: 10px;
     }
 
     img {
