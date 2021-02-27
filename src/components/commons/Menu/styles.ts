@@ -10,14 +10,13 @@ export const MenuWrapper = {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 18px;
+    margin-top: 21px;
     padding-left: 28px;
     padding-right: 28px;
-    height: 10vh;
+    height: 7vh;
     ${breakpointsMedia({
     md: css`
         justify-content: flex-start;
-        margin-top: 32px;
         margin-left: auto;
         margin-right: auto;
         width: 100%;

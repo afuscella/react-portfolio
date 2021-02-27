@@ -17,9 +17,20 @@ const paragraph1 = css`
 `;
 
 const paragraph2 = css`
-  font-size: ${({ theme }) => theme.typographyVariants.paragraph2.fontSize};
-  font-weight: ${({ theme }) => theme.typographyVariants.paragraph2.fontWeight};
-  line-height: ${({ theme }) => theme.typographyVariants.paragraph2.lineHeight};
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.paragraph2XS.fontSize};
+    font-weight: ${theme.typographyVariants.paragraph2XS.fontWeight};
+    line-height: ${theme.typographyVariants.paragraph2XS.lineHeight};
+  `}
+  ${breakpointsMedia({
+  md: css`
+      ${({ theme }) => css`
+        font-size: ${theme.typographyVariants.paragraph2.fontSize};
+        font-weight: ${theme.typographyVariants.paragraph2.fontWeight};
+        line-height: ${theme.typographyVariants.paragraph2.lineHeight};
+    `}
+  `,
+  })}
 `;
 
 const title = css`
@@ -36,13 +47,24 @@ const title = css`
         line-height: ${theme.typographyVariants.title.lineHeight};
     `}
   `,
-})}
+  })}
 `;
 
 const subTitle = css`
-  font-size: ${({ theme }) => theme.typographyVariants.subTitle.fontSize};
-  font-weight: ${({ theme }) => theme.typographyVariants.subTitle.fontWeight};
-  line-height: ${({ theme }) => theme.typographyVariants.subTitle.lineHeight};
+  ${({ theme }) => css`
+    font-size: ${theme.typographyVariants.subTitleXS.fontSize};
+    font-weight: ${theme.typographyVariants.subTitleXS.fontWeight};
+    line-height: ${theme.typographyVariants.subTitleXS.lineHeight};
+  `}
+  ${breakpointsMedia({
+  md: css`
+      ${({ theme }) => css`
+        font-size: ${theme.typographyVariants.subTitle.fontSize};
+        font-weight: ${theme.typographyVariants.subTitle.fontWeight};
+        line-height: ${theme.typographyVariants.subTitle.lineHeight};
+    `}
+  `,
+  })}
 `;
 
 export const TextStyleVariantMap = {
@@ -62,6 +84,7 @@ export const TextBase = styled.span<ITextBase>`
   ${propToStyle('textAlign')}
   ${propToStyle('marginBottom')}
   ${propToStyle('margin')}
+  ${propToStyle('padding')}
 
   ${({ variant }) => TextStyleVariantMap[variant]};
   color: ${({ theme, color }) => get(theme, `colors.${color}.color`)};

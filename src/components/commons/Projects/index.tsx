@@ -8,40 +8,18 @@ import { Grid } from '@/components/foundation/layout/Grid';
 import { ProjectsWrapper } from './styles';
 
 export function Projects() {
-  const cards = [{
-    id: 1,
-    paragraph2: 'Breja Quiz | Happy Hour',
-    uri: 'https://bitter-brewing-quiz.afuscella.vercel.app/',
-    description: 'Do you really think you know everything about beers?, So come and join this trivial and try to not get drunk answering the questions.',
-    image: 'images/beer.png',
-  }, {
-    id: 2,
-    paragraph2: 'Tarde Rock',
-    uri: 'https://play.google.com/store/apps/details?id=com.raketenstartdev.tarderock',
-    description: 'Tarde Rock is an Android app that allows you to hear the newest brazilian garage bands.',
-    image: 'images/rock.svg',
-  }, {
-    id: 3,
-    paragraph2: 'Personal Blog',
-    uri: 'https://arrayoutofindex.wordpress.com/',
-    description: 'All about my activities, thoughts, ideas, and everything that happened around me.',
-    image: 'images/blog.svg'
-  }, {
-    id: 4,
-    paragraph2: 'Instalura',
-    uri: 'https://instalura.oarthursilva.vercel.app/',
-    description: 'Share moment and get connected with your friends.',
-    image: 'images/instalura.svg'
-  }]
-
   return (
     <ProjectsWrapper>
 
       <Text
-        variant="title"
-        tag="a"
+        variant="subTitle"
+        tag="h1"
         name="projects"
         color="primary.main"
+        textAlign={{
+          xs: 'center',
+          md: 'start'
+        }}
       >
         Projects
       </Text>
@@ -50,81 +28,34 @@ export function Projects() {
 
         <Grid.Row>
           <Grid.Column
-            value={{ xs: 12, md: 4 }}
+            value={{ xs: 12, md: 6 }}
             display="flex"
-            alignItems="start"
+            alignItems="center"
             justifyContent="center"
             flexDirection="column"
           >
 
-            <Text
-              variant="paragraph2"
-              tag="h1"
-              color="tertiary.main"
-            >
-              Breja Quiz | Happy Hour
-            </Text>
-
-            <Text
-              variant="paragraph1"
-              tag="p"
-              color="tertiary.light"
-            >
-              Do you really think you know everything about beers?, So come and join this trivial and try to not get drunk answering the questions.
-            </Text>
-
+            <Card
+              title='Breja Quiz | Happy Hour'
+              description='Do you really think you know everything about beers?, So come and join this trivial and try to not get drunk answering the questions.'
+              uri='https://bitter-brewing-quiz.afuscella.vercel.app/'
+              image='images/beer.png'
+            />
           </Grid.Column>
 
           <Grid.Column
-            value={{ xs: 12, md: 4 }}
+            value={{ xs: 12, md: 6 }}
             display="flex"
-            alignItems="start"
+            alignItems="center"
             justifyContent="center"
             flexDirection="column"
           >
-
-            <Text
-              variant="paragraph2"
-              tag="h1"
-              color="tertiary.main"
-              textAlign={{ xs: 'center' }}
-            >
-              Personal Blog
-            </Text>
-
-            <Text
-              variant="paragraph1"
-              tag="p"
-              color="tertiary.light"
-            >
-              All about my activities, thoughts, ideas, and everything that happened around me.
-            </Text>
-          </Grid.Column>
-
-          <Grid.Column
-            value={{ xs: 12, md: 4 }}
-            display="flex"
-            alignItems="start"
-            justifyContent="center"
-            flexDirection="column"
-          >
-
-            <Text
-              variant="paragraph2"
-              tag="h1"
-              color="tertiary.main"
-              textAlign={{ xs: 'center' }}
-            >
-              Personal Blog
-            </Text>
-
-            <Text
-              variant="paragraph1"
-              tag="p"
-              color="tertiary.light"
-            >
-              Share moment and get connected with your friends.
-            </Text>
+            <Card
+              title='Instalura'
+              description='Share moment and get connected with your friends.'
+              uri='https://instalura.oarthursilva.vercel.app/'
+              image='images/instalura.png'
+            />
           </Grid.Column>
 
         </Grid.Row>
@@ -133,42 +64,31 @@ export function Projects() {
           <Grid.Column
             value={{ xs: 12, md: 6 }}
             display="flex"
-            alignItems="start"
+            alignItems="center"
             justifyContent="center"
             flexDirection="column"
           >
-
             <Card
-              description='All about my activities, thoughts, ideas, and everything that happened around me.'
-              title='Personal Blog'
-              uri='images/blog.svg'
+              title='Tarde Rock'
+              description='Tarde Rock is an Android app that allows you to hear the newest brazilian garage bands.'
+              uri='https://play.google.com/store/apps/details?id=com.raketenstartdev.tarderock'
+              image='images/rock.png'
             />
-
           </Grid.Column>
 
           <Grid.Column
             value={{ xs: 12, md: 6 }}
             display="flex"
-            alignItems="start"
+            alignItems="center"
             justifyContent="center"
             flexDirection="column"
           >
-
-            <Text
-              variant="paragraph2"
-              tag="h1"
-              color="tertiary.main"
-            >
-              Personal Blog
-            </Text>
-
-            <Text
-              variant="paragraph1"
-              tag="p"
-              color="tertiary.light"
-            >
-              All about my activities, thoughts, ideas, and everything that happened around me.
-            </Text>
+            <Card
+              title='Personal Blog'
+              description='All about my activities, thoughts, ideas, and everything that happened around me.'
+              uri='https://arrayoutofindex.wordpress.com/'
+              image='images/blog.png'
+            />
           </Grid.Column>
 
         </Grid.Row>

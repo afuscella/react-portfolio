@@ -10,10 +10,6 @@ export function Cover({ ...props }) {
     <CoverWrapper.Cover
       {...props}
     >
-      <CoverWrapper.Header>
-        <img src='images/me.png' />
-      </CoverWrapper.Header>
-
       <CoverWrapper.Content>
         <Text
           variant="title"
@@ -25,7 +21,7 @@ export function Cover({ ...props }) {
           }}
         >
           Arthur Fuscella Silva
-          </Text>
+        </Text>
 
         <Text
           variant="paragraph1"
@@ -50,10 +46,14 @@ export function Cover({ ...props }) {
         >
           Bachelor in Computer Science
         </Text>
-
         <Footer />
 
       </CoverWrapper.Content>
+
+      <CoverWrapper.Header>
+        <img src='images/me.png' />
+      </CoverWrapper.Header>
+
     </CoverWrapper.Cover>
   );
 }

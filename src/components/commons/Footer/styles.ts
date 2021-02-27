@@ -29,7 +29,7 @@ export const FooterWrapper = {
     a {
       text-decoration: none;
       cursor: pointer;
-      color: ${({ theme }) => theme.colors.secondary.light.color};
+      color: ${({ theme }) => theme.colors.light.secondary.light.color};
       transition: ${({ theme }) => theme.transition};
       &:hover,
       &:focus {

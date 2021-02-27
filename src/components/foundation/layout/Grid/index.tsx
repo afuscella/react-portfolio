@@ -3,56 +3,60 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 import { propToStyle } from '@/themes/utils/propToStyle';
 
-interface IColumn {
-  offset?: number;
-  value?: number;
-}
-
-// eslint-disable-next-line import/prefer-default-export
 export const Grid = {
   Container: styled.div`
     width: 100%;
-    padding-right: 28px;
-    padding-left: 28px;
     margin-right: auto;
     margin-left: auto;
 
     ${propToStyle('marginTop')};
 
     ${breakpointsMedia({
-    xs: css`
+      xs: css`
         max-width: initial;
       `,
-    sm: css`
+      sm: css`
+        padding-right: 28px;
+        padding-left: 28px;
         max-width: 576px; 
       `,
-    md: css`
+      md: css`
         max-width: 768px;
         padding-right: 16px;
         padding-left: 16px; 
       `,
-    lg: css`
+      lg: css`
         max-width: 1160px; 
       `,
-    xl: css`
+      xl: css`
         max-width: 1222px;
     `,
-  })}
+    })}
   `,
 
   Row: styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin-left: -16px;
-    margin-right: -16px;
+
+    ${breakpointsMedia({
+      sm: css`
+        margin-left: -16px;
+        margin-right: -16px;
+      `,
+    })}
   `,
 
   Column: styled.div`
-    padding-left: 16px;
-    padding-right: 16px;
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
+
+    ${breakpointsMedia({
+      sm: css`
+        padding-left: 16px;
+        padding-right: 16px;
+      `,
+    })}
 
     ${propToStyle('display')}
     ${propToStyle('alignItems')}

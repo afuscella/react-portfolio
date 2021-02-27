@@ -11,7 +11,7 @@ export const CoverWrapper = {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    min-height: 85vh;
+    min-height: 90vh;
     font-family: ${({ theme }) => theme.fontFamily};
 
     ${breakpointsMedia({
@@ -27,10 +27,10 @@ export const CoverWrapper = {
         max-width: 768px;
         width: 100%;
       `,
-    lg: css`
+      lg: css`
         max-width: 1160px;
-      `,
-    xl: css`
+        `,
+      xl: css`
         max-width: 1222px;
       `,
   })}
@@ -44,13 +44,24 @@ export const CoverWrapper = {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 50%;
+    width: 25%;
+
+    ${breakpointsMedia({
+      xs: css`
+        order: initial;
+      `,
+      md: css`
+      order: 3;
+      `
+    })}
+
     img {
       border-radius: 50%;
     }
   `,
 
   Content: styled.div`
+    order: 3;
     nav {
       display: flex;
       align-items: center;
@@ -62,7 +73,7 @@ export const CoverWrapper = {
         height: 100%;
       `,
       md: css`
-        width: 50%;
+        width: 30%;
         height: 50%;
       `,
   })}

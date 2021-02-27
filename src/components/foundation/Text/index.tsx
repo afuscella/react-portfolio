@@ -1,9 +1,7 @@
 import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line import/no-unresolved
 import { TextBase } from './styles';
-
 interface IText {
   tag: any;
   variant: string;
@@ -13,7 +11,6 @@ interface IText {
   children?: ReactNode | ReactNode[];
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function Text({
   tag, variant, children, ...props
 }: IText) {
