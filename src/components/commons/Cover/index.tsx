@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Text } from '@/components/foundation/Text';
-import { Footer } from '@/components/commons/Footer';
+import { SocialMedias } from '@/components/commons/SocialMedias';
 
 import { CoverWrapper } from './styles';
 
@@ -46,7 +46,7 @@ export function Cover({ ...props }) {
         >
           Bachelor in Computer Science
         </Text>
-        <Footer />
+        <SocialMedias />
 
       </CoverWrapper.Content>
 

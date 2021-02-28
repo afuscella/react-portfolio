@@ -4,11 +4,9 @@ import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const CardWrapper = {
   Card: styled.section`
-    flex-wrap: wrap;
-    /* flex-direction: row; */
+    background: ${({ theme}) => theme.colors.light.tertiary.main.color};
     text-decoration: none;
     margin-bottom: 12px;
-    background: ${({ theme}) => theme.colors.light.tertiary.main.color};
     box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
     width: 450px;
     ${breakpointsMedia({
