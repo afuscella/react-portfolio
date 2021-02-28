@@ -16,6 +16,7 @@ declare module 'styled-components' {
       xl: number;
     },
     typographyVariants: ITypographyVariants;
+    padding: string;
     transition: string;
     fontFamily: string;
   }

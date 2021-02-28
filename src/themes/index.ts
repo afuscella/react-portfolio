@@ -94,6 +94,7 @@ const theme: DefaultTheme = {
   mode,
   typographyVariants,
   breakpoints,
+  padding: '20px',
   transition: '200ms ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };

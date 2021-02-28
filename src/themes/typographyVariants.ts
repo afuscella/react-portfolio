@@ -86,7 +86,7 @@ export const typographyVariants: ITypographyVariants = {
   },
   // [subTitleXS]
   subTitleXS: {
-    fontSize: '28px',
+    fontSize: '24px',
     fontWeight: '600',
     lineHeight: 1.25, // 125%
   }
