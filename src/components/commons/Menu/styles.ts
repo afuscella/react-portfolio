@@ -78,7 +78,7 @@ export const MenuWrapper = {
       text-align: center;
       display: block;
       text-decoration: none;
-      color: #070C0e;
+      color: ${({theme}) => theme.colors.primary.main.color};
       transition: ${({ theme }) => theme.transition};
       ${breakpointsMedia({
         xs: css`
