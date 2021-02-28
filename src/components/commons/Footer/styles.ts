@@ -40,6 +40,6 @@ export const FooterWrapper = {
     &:first-child {
       margin-left: 0;
     }
-    margin-left: 10px;
+    margin-left: 20px;
   `,
 }

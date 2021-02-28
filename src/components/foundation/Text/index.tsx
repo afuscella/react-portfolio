@@ -7,7 +7,7 @@ interface IText {
   variant: string;
   color: string;
   href?: string;
-  name?: string;
+  target?: string;
   children?: ReactNode | ReactNode[];
 }
 

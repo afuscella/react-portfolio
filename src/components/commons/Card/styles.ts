@@ -37,7 +37,7 @@ export const CardWrapper = {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 10px;
+      padding: 10px 20px 10px 20px;
     }
 
     img {
