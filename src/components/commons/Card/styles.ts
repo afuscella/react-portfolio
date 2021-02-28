@@ -5,12 +5,11 @@ import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 export const CardWrapper = {
   Card: styled.section`
     flex-wrap: wrap;
-    border-radius: 4px;
     text-decoration: none;
     flex-direction: row;
     margin-bottom: 12px;
     background: ${({ theme}) => theme.colors.light.tertiary.main.color};
-    box-shadow: 0 1px 1px rgb(0 0 0 / 35%);
+    box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
     width: 450px;
     ${breakpointsMedia({
       xs: css`
@@ -29,7 +28,7 @@ export const CardWrapper = {
 
     &:hover,
     &:focus {
-      opacity: .5;
+      opacity: .8;
       transition: ${({ theme }) => theme.transition};
       cursor: pointer;
     }

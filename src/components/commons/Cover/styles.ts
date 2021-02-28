@@ -12,12 +12,12 @@ export const CoverWrapper = {
     align-items: center;
     justify-content: space-evenly;
     font-family: ${({ theme }) => theme.fontFamily};
-    min-height: 85vh;
+    min-height: 90vh;
     ${breakpointsMedia({
       xs: css`
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
+        padding: ${({ theme }) => theme.padding};
       `,
       md: css`
         padding-right: 16px;
@@ -30,10 +30,9 @@ export const CoverWrapper = {
       xl: css`
         max-width: 1222px;
       `,
-  })}
+    })}
 
     ${propToStyle('marginTop')};
-
   `,
 
   Header: styled.div`
@@ -53,7 +52,14 @@ export const CoverWrapper = {
 
     img {
       border-radius: 50%;
-      width: 100%
+      ${breakpointsMedia({
+        xs: css`
+          width: 75%
+        `,
+        md: css`
+          width: 100%
+        `
+      })}
     }
   `,
 

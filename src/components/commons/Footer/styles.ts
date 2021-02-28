@@ -22,7 +22,7 @@ export const FooterWrapper = {
   `,
 
   Icon: styled.div`
-    margin-right: 20px;
+    margin: 10px;
     img {
       width: 32px;
       margin-left: 10px;

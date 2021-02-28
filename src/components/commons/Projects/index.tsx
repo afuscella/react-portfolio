@@ -11,23 +11,33 @@ export function Projects() {
   return (
     <ProjectsWrapper>
 
-      <Text
-        variant="subTitle"
-        tag="h1"
-        name="projects"
-        color="primary.main"
-        textAlign={{
-          xs: 'center',
-          md: 'start'
-        }}
-      >
-        Projects
-      </Text>
-
       <Grid.Container>
         <Grid.Row>
 
-        <Grid.Column
+          <Grid.Column
+            value={{ xs: 12, md: 12 }}
+            display="flex"
+            justifyContent="center"
+            flexDirection="column"
+          >
+
+            <Text
+              variant="subTitle"
+              tag="h1"
+              color="primary.main"
+              textAlign={{
+                xs: 'center',
+                md: 'start'
+              }}
+            >
+              Projects
+          </Text>
+
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+          <Grid.Column
             value={{ xs: 12, md: 6 }}
             display="flex"
             alignItems="center"
@@ -41,6 +51,7 @@ export function Projects() {
               uri='https://bitter-brewing-quiz.afuscella.vercel.app/'
               image='images/beer.png'
             />
+
           </Grid.Column>
 
           <Grid.Column
@@ -57,8 +68,8 @@ export function Projects() {
               image='images/instalura.png'
             />
           </Grid.Column>
-
         </Grid.Row>
+
         <Grid.Row>
 
           <Grid.Column

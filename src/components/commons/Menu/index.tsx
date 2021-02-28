@@ -1,6 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ThemeContext } from 'styled-components';
 
 import { Text } from '@/components/foundation/Text';
 import { DarkMode } from '@/components/commons/DarkMode';
@@ -21,8 +20,6 @@ export function Menu() {
     text: 'Contact me',
     url: 'mailto:fuscellaarthur@gmail.com'
   }];
-
-  // const { toggleThemeMode } = useContext(ThemeContext);
 
   return (
     <MenuWrapper.Menu
