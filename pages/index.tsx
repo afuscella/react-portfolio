@@ -3,9 +3,10 @@ import { motion } from 'framer-motion';
 
 import { Box } from '@/components/foundation/layout/Container';
 
-import { Cover } from '@/components/commons/Cover';
-import { Menu } from '@/components/commons/Menu';
 import { About } from '@/components/commons/About';
+import { Cover } from '@/components/commons/Cover';
+import { Footer } from '@/components/commons/Footer';
+import { Menu } from '@/components/commons/Menu';
 import { Projects } from '@/components/commons/Projects';
 
 export default function Home() {
@@ -30,7 +31,11 @@ export default function Home() {
       />
 
       <About />
+      
       <Projects />
+
+      <Footer />
+
     </Box>
   );
 }

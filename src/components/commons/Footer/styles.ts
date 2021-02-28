@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const FooterWrapper = styled.footer`
-  background: ${({ theme}) => theme.colors.light.tertiary.main.color};
   display: flex;
   align-items: center;
   justify-content: center;

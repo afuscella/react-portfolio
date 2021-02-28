@@ -29,17 +29,13 @@ const light: ModeType = {
   },
   tertiary: {
     main: {
-      color: '#e3e6ea',
+      color: '#dee2e6',
       contrastText: '#fff',
     },
     light: {
-      color: '#88989E',
+      color: '#e9ecef',
       contrastText: '#fff',
     }
-  },
-  light: {
-    color: '#88989E',
-    contrastText: '#fff',
   },
 };
 
