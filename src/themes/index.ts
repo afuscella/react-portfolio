@@ -50,25 +50,30 @@ const dark: ModeType = {
   },
   primary: {
     main: {
-      color: '#32363a',
+      color: '#fff',
       contrastText: '#fff',
     },
   },
   secondary: {
     main: {
-      color: '#2c3248',
+      color: '#e5e5e5',
       contrastText: '#fff',
     },
     light: {
-      color: '#88989E',
+      color: '#e5e5e5',
       contrastText: '#fff',
     },
   },
-};
-
-const colors = {
-  light: light,
-  dark: dark,
+  tertiary: {
+    main: {
+      color: '#dee2e6',
+      contrastText: '#fff',
+    },
+    light: {
+      color: '#000',
+      contrastText: '#fff',
+    }
+  },
 };
 
 let mode: string = 'light';
@@ -79,6 +84,11 @@ export function toggleThemeMode() {
   else {
     mode = 'dark';
   };
+};
+
+export const colors = {
+  light: light,
+  dark: dark,
 };
 
 export const breakpoints = {
