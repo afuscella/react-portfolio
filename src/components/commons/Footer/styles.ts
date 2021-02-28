@@ -11,18 +11,17 @@ export const FooterWrapper = {
     border-radius: 4px;
     display: flex;
     ${breakpointsMedia({
-    xs: css`
+      xs: css`
         justify-content: center;
       `,
-    md: css`
+      md: css`
         justify-content: flex-start;
       `
-  })
+      })
     }
   `,
 
-  Icon: styled.div`
-    margin: 10px;
+  Icons: styled.div`
     img {
       width: 32px;
       margin-left: 10px;
@@ -38,5 +37,9 @@ export const FooterWrapper = {
         opacity: .5;
       }
     }
+    &:first-child {
+      margin-left: 0;
+    }
+    margin-left: 10px;
   `,
 }

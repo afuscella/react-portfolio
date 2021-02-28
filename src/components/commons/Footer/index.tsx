@@ -26,19 +26,19 @@ export function Footer() {
     <FooterWrapper.Footer>
       {links.map((link) => {
         return (
-          <FooterWrapper.Icon key={link.id}>
+          <FooterWrapper.Icons key={link.id}>
 
             <Text
               variant="paragraph2"
-              tag="h1"
+              tag="a"
               href={link.uri}
-              color="tertiary.main"
             >
               <Linkedin
                 color='#32363a'
               />
             </Text>
-          </FooterWrapper.Icon>
+
+          </FooterWrapper.Icons>
         )
       })}
     </FooterWrapper.Footer>

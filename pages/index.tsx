@@ -5,6 +5,7 @@ import { Box } from '@/components/foundation/layout/Container';
 
 import { Cover } from '@/components/commons/Cover';
 import { Menu } from '@/components/commons/Menu';
+import { About } from '@/components/commons/About';
 import { Projects } from '@/components/commons/Projects';
 
 export default function Home() {
@@ -28,7 +29,8 @@ export default function Home() {
         animate="show"
       />
 
-      <Projects/>
+      <About />
+      <Projects />
     </Box>
   );
 }

@@ -19,15 +19,15 @@ export function Card({ title, description, image, uri }: ICard) {
         <Text
           variant="paragraph2"
           tag="span"
-          color="primary.main"
-        >
+          color="secondary.main"
+          >
           {title}
         </Text>
 
         <Text
           variant="paragraph1"
-          tag="p"
-          color="secondary.main"
+          tag="span"
+          color="primary.main"
         >
           {description}
         </Text>
