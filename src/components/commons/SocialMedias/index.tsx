@@ -24,15 +24,15 @@ export function SocialMedias() {
 
   function retrieveSocialMediaIcon(media: string) {
     if (media === 'github') {
-      return <Github color='#32363a' />
+      return <Github />
     }
 
     if (media === 'linkedin') {
-      return <Linkedin color='#32363a' />
+      return <Linkedin />
     }
 
     if (media === 'globe') {
-      return <Globe color='#32363a' />
+      return <Globe />
     }
   }
 

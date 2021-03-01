@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import ThemeContext from '@/context/Theme';
 import GlobalStyle from '@/themes/GlobalStyle';
-import theme from '@/themes/index';
+import theme, { colors } from '@/themes/index';
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [themeName, setThemeName] = useState<string>('light');
+
+  function themeToggler() {
+    setThemeName(themeName === 'dark' ? 'light' : 'dark');
+  }
+
   return (
     <>
       <Head>
@@ -19,12 +26,14 @@ export default function App({ Component, pageProps }: AppProps) {
         />
       </Head>
 
-      <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <ThemeContext.Provider value={{ themeName, themeToggler }}>
+        <ThemeProvider theme={{ ...theme, colors: colors[themeName] }}>
 
+          <GlobalStyle />
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ThemeContext.Provider>
     </>
   );
 }

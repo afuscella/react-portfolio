@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const SocialMediasWrapper = {
-  Social: styled.footer`
+  Social: styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -21,6 +21,7 @@ export const SocialMediasWrapper = {
   `,
 
   Icons: styled.div`
+    color: ${({ theme }) => theme.colors.primary.main.color};
     img {
       width: 32px;
       margin-left: 10px;
@@ -29,7 +30,6 @@ export const SocialMediasWrapper = {
     a {
       text-decoration: none;
       cursor: pointer;
-      /* color: ${({ theme }) => theme.colors.secondary.light.color}; */
       transition: ${({ theme }) => theme.transition};
       &:hover,
       &:focus {

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { motion } from 'framer-motion';
 
 import { Box } from '@/components/foundation/layout/Container';
@@ -9,16 +9,20 @@ import { Footer } from '@/components/commons/Footer';
 import { Menu } from '@/components/commons/Menu';
 import { Projects } from '@/components/commons/Projects';
 
+import ThemeContext from '@/context/Theme';
+
 export default function Home() {
+  const { themeName } = useContext(ThemeContext);
   return (
     <Box
       flex={1}
-      backgroundImage="url(/images/background-light.svg)"
+      backgroundImage={`url(/images/background-${themeName}.svg)`}
       backgroundRepeat="repeat"
       backgroundPosition="center"
     >
 
       <Menu />
+      
       <Cover
         as={motion.section}
         transition={{ delay: 0, duration: 0.5 }}

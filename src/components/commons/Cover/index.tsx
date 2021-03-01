@@ -46,6 +46,7 @@ export function Cover({ ...props }) {
         >
           Bachelor in Computer Science
         </Text>
+        
         <SocialMedias />
 
       </CoverWrapper.Content>
