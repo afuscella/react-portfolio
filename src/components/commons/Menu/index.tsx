@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { Text } from '@/components/foundation/Text';
 import { DarkMode } from '@/components/commons/DarkMode';
 
+import { Code } from '@/themes/Icons/Code';
+
 import { MenuWrapper } from './styles';
 
 export function Menu() {
@@ -33,7 +35,7 @@ export function Menu() {
       animate="show"
     >
       <MenuWrapper.LeftSide>
-        <img src='icons/code.svg' />
+        <Code />
       </MenuWrapper.LeftSide>
 
       <MenuWrapper.CentralSide>

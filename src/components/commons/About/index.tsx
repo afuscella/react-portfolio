@@ -41,7 +41,7 @@ export function About() {
             <section>
               <Text
                 variant="paragraph1"
-                tag="span"
+                tag="p"
                 color="primary.main"
                 textAlign={{
                   xs: 'start'
