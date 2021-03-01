@@ -74,7 +74,7 @@ export const MenuWrapper = {
         padding-bottom: 0;
       `,
     })}
-    a {
+    span {
       text-align: center;
       display: block;
       text-decoration: none;
@@ -87,12 +87,13 @@ export const MenuWrapper = {
         md: css`
           ${TextStyleVariantMap.paragraph1}
         `,
-    })}
-        &:hover,
-        &:focus {
-          font-weight: 400;
-          color: #88989e;
-        }
+      })}
+      &:hover,
+      &:focus {
+        cursor: pointer;
+        font-weight: 400;
+        color: #88989e;
+      }
     }
   `,
 

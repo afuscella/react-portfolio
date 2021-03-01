@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-scroll';
 
 import { Text } from '@/components/foundation/Text';
 import { DarkMode } from '@/components/commons/DarkMode';
@@ -12,19 +13,20 @@ export function Menu() {
   const links = [{
     id: 1,
     text: 'Portfólio',
-    url: '/'
+    section: 'menu__section'
   }, {
     id: 2,
-    text: 'About me',
-    url: '/about'
+    text: 'About',
+    section: 'about__section'
   }, {
     id: 3,
-    text: 'Contact me',
-    url: 'mailto:fuscellaarthur@gmail.com'
+    text: 'Projects',
+    section: 'projects__section'
   }];
 
   return (
     <MenuWrapper.Menu
+      id="menu__section"
       as={motion.nav}
       transition={{ delay: 0.5, duration: 0.5 }}
       variants={{
@@ -40,11 +42,21 @@ export function Menu() {
 
       <MenuWrapper.CentralSide>
         {links.map((link) => (
-          <li key={link.url}>
-            <Text variant='smallestException' tag='a' href={link.url}>
+
+          <Link
+            key={link.id}
+            activeClass="active"
+            to={link.section}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+          >
+            <Text variant='smallestException' tag='span'>
               {link.text}
             </Text>
-          </li>
+          </Link>
+
         ))}
       </MenuWrapper.CentralSide>
 

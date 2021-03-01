@@ -3,6 +3,7 @@ import React from 'react';
 import { Github } from '@/themes/Icons/Github';
 import { Linkedin } from '@/themes/Icons/Linkedin';
 import { Globe } from '@/themes/Icons/Globe';
+import { Mail } from '@/themes/Icons/Mail';
 
 import { Text } from '@/components/foundation/Text';
 import { SocialMediasWrapper } from './styles';
@@ -20,6 +21,10 @@ export function SocialMedias() {
     id: 3,
     media: 'globe',
     uri: 'https://arrayoutofindex.wordpress.com/'
+  }, {
+    id: 4,
+    media: 'mail',
+    uri: 'mailto:fuscellaarthur@gmail.com'
   }]
 
   function retrieveSocialMediaIcon(media: string) {
@@ -33,6 +38,10 @@ export function SocialMedias() {
 
     if (media === 'globe') {
       return <Globe />
+    }
+
+    if (media === 'mail') {
+      return <Mail />
     }
   }
 

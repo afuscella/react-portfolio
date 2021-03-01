@@ -9,7 +9,9 @@ import { ProjectsWrapper } from './styles';
 
 export function Projects() {
   return (
-    <ProjectsWrapper>
+    <ProjectsWrapper
+      id="projects__section"
+    >
 
       <Grid.Container>
         <Grid.Row>
