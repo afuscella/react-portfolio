@@ -4,7 +4,7 @@ import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const CardWrapper = {
   Card: styled.section`
-    background: ${({ theme }) => theme.colors.tertiary.light.color};
+    background: ${({ theme }) => `${theme.colors.tertiary.light.color}20`};
     text-decoration: none;
     margin-bottom: 12px;
     box-shadow: ${({ theme }) => `0 1px 0 ${theme.colors.tertiary.main.color}20`};

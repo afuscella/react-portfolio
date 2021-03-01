@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Svg = styled.svg`
   cursor: pointer;
   fill: ${({ theme }) => theme.colors.primary.main.color};
-  transition: 200ms ease-in-out;
+  transition: ${({ theme }) => theme.transition};
   &:hover,
   &:focus {
     fill: ${({ theme }) => theme.colors.primary.main.color};

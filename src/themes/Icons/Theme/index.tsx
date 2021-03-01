@@ -7,7 +7,7 @@ const Svg = styled.svg`
   width: 24px;
   height: 24px;
   margin-right: 10px;
-  transition: 200ms ease-in-out;
+  transition: ${({ theme }) => theme.transition};
   &:hover,
   &:focus {
     fill: ${({ theme }) => theme.colors.primary.main.color};

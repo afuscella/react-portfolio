@@ -23,7 +23,7 @@ const light: ModeType = {
       contrastText: '#fff',
     },
     light: {
-      color: '#88989E',
+      color: '#32363a',
       contrastText: '#fff',
     },
   },
