@@ -76,16 +76,6 @@ const dark: ModeType = {
   },
 };
 
-let mode: string = 'light';
-export function toggleThemeMode() {
-  if (mode === 'dark') {
-    mode = 'light';
-  }
-  else {
-    mode = 'dark';
-  };
-};
-
 export const colors = {
   light: light,
   dark: dark,
@@ -101,10 +91,9 @@ export const breakpoints = {
 
 const theme: DefaultTheme = {
   colors,
-  mode,
   typographyVariants,
   breakpoints,
-  padding: '20px',
+  padding: '10px',
   transition: '200ms ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };
