@@ -56,7 +56,7 @@ export const typographyVariants: ITypographyVariants = {
   },
   // [paragraph2XS]
   paragraph2XS: {
-    fontSize: '16px',
+    fontSize: '14px',
     fontWeight: '600',
     lineHeight: 1.75, // 175%
   },

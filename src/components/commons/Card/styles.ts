@@ -4,25 +4,25 @@ import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const CardWrapper = {
   Card: styled.section`
-    background: ${({ theme}) => theme.colors.tertiary.light.color};
+    background: ${({ theme }) => theme.colors.tertiary.light.color};
     text-decoration: none;
     margin-bottom: 12px;
     box-shadow: ${({ theme }) => `0 1px 0 ${theme.colors.tertiary.main.color}20`};
     width: 450px;
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         width: 350px;
       `,
-      md: css`
+    md: css`
         width: 325px;
       `,
-      lg: css`
+    lg: css`
         width: 450px;
       `,
-      xl: css`
+    xl: css`
         width: 450px;
       `,
-    })}
+  })}
 
     &:hover,
     &:focus {
@@ -35,24 +35,24 @@ export const CardWrapper = {
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      padding: 10px;
+      padding: ${({ theme }) => theme.padding};
     }
 
     img {
       ${breakpointsMedia({
-        xs: css`
+    xs: css`
           width: 350px;
         `,
-        md: css`
+    md: css`
           width: 325px;
         `,
-        lg: css`
+    lg: css`
           width: 450px;
         `,
-        xl: css`
+    xl: css`
           width: 450px;
         `,
-      })}
+  })}
     }
   `,
 };
