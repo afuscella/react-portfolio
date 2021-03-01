@@ -29,7 +29,7 @@ const light: ModeType = {
   },
   tertiary: {
     main: {
-      color: '#dee2e6',
+      color: '#070C0e',
       contrastText: '#fff',
     },
     light: {
@@ -66,11 +66,11 @@ const dark: ModeType = {
   },
   tertiary: {
     main: {
-      color: '#dee2e6',
+      color: '#f0f0f7',
       contrastText: '#fff',
     },
     light: {
-      color: '#000',
+      color: '#070C0e',
       contrastText: '#fff',
     }
   },

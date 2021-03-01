@@ -7,7 +7,7 @@ export const CardWrapper = {
     background: ${({ theme}) => theme.colors.tertiary.light.color};
     text-decoration: none;
     margin-bottom: 12px;
-    box-shadow: 0 1px 0 rgb(0 0 0 / 20%);
+    box-shadow: ${({ theme }) => `0 1px 0 ${theme.colors.tertiary.main.color}20`};
     width: 450px;
     ${breakpointsMedia({
       xs: css`
@@ -26,7 +26,7 @@ export const CardWrapper = {
 
     &:hover,
     &:focus {
-      opacity: .8;
+      opacity: .7;
       transition: ${({ theme }) => theme.transition};
       cursor: pointer;
     }

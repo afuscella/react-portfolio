@@ -50,7 +50,7 @@ export function Projects() {
             <Card
               title='Breja Quiz | Happy Hour'
               description='Do you really think you know everything about beers?'
-              uri='https://bitter-brewing-quiz.afuscella.vercel.app/'
+              uri='https://bitter-brewing-quiz.vercel.app/'
               image='images/beer.png'
             />
 
