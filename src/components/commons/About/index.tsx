@@ -10,7 +10,6 @@ export function About() {
     <AboutWrapper
       id="about__section"
     >
-
       <Grid.Container>
         <Grid.Row>
 
@@ -49,14 +48,23 @@ export function About() {
                   xs: 'start'
                 }}
               >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                officia deserunt mollit anim id est laborum.
+                Arthur Fuscella Silva is bachelor degree in Computer Science and works with SAP since 2008, 
+                being 10+ years experience as consultant. Also, has excellent communication skills, 
+                rapid learning, hard working and self-motivated.
+
               </Text>
+
+              <Text
+                variant="paragraph1"
+                tag="p"
+                color="primary.main"
+                textAlign={{
+                  xs: 'start'
+                }}
+              >
+                I have the Portuguese citizenship and European passport, full available for business travels. 
+              </Text>
+
             </section>
           </Grid.Column>
 

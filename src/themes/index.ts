@@ -19,7 +19,7 @@ const light: ModeType = {
   },
   secondary: {
     main: {
-      color: '#2c3248',
+      color: '#88989e',
       contrastText: '#fff',
     },
     light: {
@@ -56,7 +56,7 @@ const dark: ModeType = {
   },
   secondary: {
     main: {
-      color: '#e5e5e5',
+      color: '#88989e',
       contrastText: '#fff',
     },
     light: {
