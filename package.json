@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "commit": "cz",
     "typecheck": "tsc"
   },
   "dependencies": {
@@ -26,7 +27,13 @@
     "@types/react-scroll": "^1.8.2",
     "@types/styled-components": "5.0.1",
     "babel-plugin-styled-components": "^1.10.0",
+    "cz-conventional-changelog": "3.3.0",
     "typescript": "4.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }
