@@ -1,4 +1,4 @@
-export type ModeType = {
+export type ColorsType = {
   background: {
     light: {
       color: string;

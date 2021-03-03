@@ -1,12 +1,9 @@
 import 'styled-components';
 import { ITypographyVariants } from '@/themes/typographyVariants';
-import { ModeType } from '@/types/themeModeType';
+import { ColorsType } from '@/types/colorsType';
 declare module 'styled-components' {
   export interface DefaultTheme {
-    colors: {
-      light: ModeType;
-      dark: ModeType;
-    },
+    colors: ColorsType,
     breakpoints: {
       xs: number;
       sm: number;
