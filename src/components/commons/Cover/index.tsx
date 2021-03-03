@@ -33,7 +33,7 @@ export function Cover({ ...props }) {
             md: 'start',
           }}
         >
-          SAP specialist and software architech. Enthusiastic of new technologies.
+          SAP specialist and software architech. Tech enthusiat.
         </Text>
 
         <Text
