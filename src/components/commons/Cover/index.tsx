@@ -8,6 +8,7 @@ import { CoverWrapper } from './styles';
 export function Cover({ ...props }) {
   return (
     <CoverWrapper.Cover
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       <CoverWrapper.Content>
@@ -17,7 +18,7 @@ export function Cover({ ...props }) {
           color="primary.main"
           textAlign={{
             xs: 'center',
-            md: 'start'
+            md: 'start',
           }}
         >
           Arthur Fuscella Silva
@@ -29,7 +30,7 @@ export function Cover({ ...props }) {
           color="secondary.light"
           textAlign={{
             xs: 'center',
-            md: 'start'
+            md: 'start',
           }}
         >
           SAP specialist and software architech. Enthusiastic of new technologies.
@@ -41,17 +42,17 @@ export function Cover({ ...props }) {
           color="secondary.light"
           textAlign={{
             xs: 'center',
-            md: 'start'
+            md: 'start',
           }}
         >
           Bachelor in Computer Science
-        </Text>      
+        </Text>
 
         <SocialMedias />
       </CoverWrapper.Content>
 
       <CoverWrapper.Header>
-        <img src='images/me.jfif' />
+        <img src="images/me.jfif" alt="myself" />
       </CoverWrapper.Header>
 
     </CoverWrapper.Cover>

@@ -12,58 +12,55 @@ export function SocialMedias() {
   const links = [{
     id: 1,
     media: 'github',
-    uri: 'https://github.com/afuscella/'
+    uri: 'https://github.com/afuscella/',
   }, {
     id: 2,
     media: 'linkedin',
-    uri: 'https://www.linkedin.com/in/afuscella/'
+    uri: 'https://www.linkedin.com/in/afuscella/',
   }, {
     id: 3,
     media: 'globe',
-    uri: 'https://arrayoutofindex.wordpress.com/'
+    uri: 'https://arrayoutofindex.wordpress.com/',
   }, {
     id: 4,
     media: 'mail',
-    uri: 'mailto:fuscellaarthur@gmail.com'
-  }]
+    uri: 'mailto:fuscellaarthur@gmail.com',
+  },
+  ];
 
   function retrieveSocialMediaIcon(media: string) {
     if (media === 'github') {
-      return <Github />
+      return <Github />;
     }
 
     if (media === 'linkedin') {
-      return <Linkedin />
+      return <Linkedin />;
     }
 
     if (media === 'globe') {
-      return <Globe />
+      return <Globe />;
     }
 
-    if (media === 'mail') {
-      return <Mail />
-    }
+    return <Mail />;
   }
 
   return (
     <SocialMediasWrapper.Social>
-      {links.map((link) => {
-        return (
-          <SocialMediasWrapper.Icons key={link.id}>
-            <p>
-              <Text
-                variant="paragraph2"
-                tag="a"
-                target="_blank"
-                href={link.uri}
-              >
-                {retrieveSocialMediaIcon(link.media)}
-              </Text>
-            </p>
+      {links.map((link) => (
+        <SocialMediasWrapper.Icons key={link.id}>
+          <p>
+            <Text
+              variant="paragraph2"
+              tag="a"
+              target="_blank"
+              href={link.uri}
+            >
+              {retrieveSocialMediaIcon(link.media)}
+            </Text>
+          </p>
 
-          </SocialMediasWrapper.Icons>
-        )
-      })}
+        </SocialMediasWrapper.Icons>
+      ))}
     </SocialMediasWrapper.Social>
   );
 }

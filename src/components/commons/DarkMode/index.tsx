@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 
 import ThemeContext from '@/context/Theme';
 import { ThemeIcon } from '@/themes/Icons/Theme';

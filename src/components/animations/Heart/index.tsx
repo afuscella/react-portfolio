@@ -7,7 +7,7 @@ import { HeartWrapper } from './styles';
 
 export function Heart() {
   const [animationState, setAnimationState] = useState({
-    isStopped: true, isPaused: false, direction: -1
+    isStopped: true, isPaused: false, direction: -1,
   });
 
   const defaultOptions = {
@@ -15,8 +15,8 @@ export function Heart() {
     autoplay: false,
     animationData: heartData,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   };
 
   return (
@@ -28,11 +28,12 @@ export function Heart() {
         ...animationState,
         isStopped: false,
         direction: animationState.direction === animation ? reverseAnimation : animation,
-      })
-    }
-    }>
+      });
+    }}
+    >
       <div>
-        <Lottie options={defaultOptions}
+        <Lottie
+          options={defaultOptions}
           height={30}
           width={30}
           direction={animationState.direction}
@@ -40,6 +41,6 @@ export function Heart() {
           isPaused={animationState.isPaused}
         />
       </div>
-    </HeartWrapper >
+    </HeartWrapper>
   );
 }

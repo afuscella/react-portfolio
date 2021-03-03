@@ -21,18 +21,17 @@ export function Projects() {
             justifyContent="center"
             flexDirection="column"
           >
-
             <Text
               variant="subTitle"
               tag="h1"
               color="primary.main"
               textAlign={{
                 xs: 'center',
-                md: 'start'
+                md: 'start',
               }}
             >
               Projects
-          </Text>
+            </Text>
 
           </Grid.Column>
         </Grid.Row>
@@ -45,14 +44,12 @@ export function Projects() {
             justifyContent="center"
             flexDirection="column"
           >
-
             <Card
-              title='Breja Quiz | Happy Hour'
-              description='Do you really think you know everything about beers?'
-              uri='https://bitter-brewing-quiz.vercel.app/'
-              image='images/beer.png'
+              title="Breja Quiz | Happy Hour"
+              description="Do you really think you know everything about beers?"
+              uri="https://bitter-brewing-quiz.vercel.app/"
+              image="images/beer.png"
             />
-
           </Grid.Column>
 
           <Grid.Column
@@ -63,10 +60,10 @@ export function Projects() {
             flexDirection="column"
           >
             <Card
-              title='Instalura'
-              description='Share moment and get connected with your friends.'
-              uri='https://instalura.oarthursilva.vercel.app/'
-              image='images/instalura.png'
+              title="Instalura"
+              description="Share moment and get connected with your friends."
+              uri="https://instalura.oarthursilva.vercel.app/"
+              image="images/instalura.png"
             />
 
           </Grid.Column>
@@ -82,10 +79,10 @@ export function Projects() {
             flexDirection="column"
           >
             <Card
-              title='Tarde Rock'
-              description='Tarde Rock is an Android app that allows you to hear the newest brazilian garage bands.'
-              uri='https://play.google.com/store/apps/details?id=com.raketenstartdev.tarderock'
-              image='images/rock.png'
+              title="Tarde Rock"
+              description="Tarde Rock is an Android app that allows you to hear the newest brazilian garage bands."
+              uri="https://play.google.com/store/apps/details?id=com.raketenstartdev.tarderock"
+              image="images/rock.png"
             />
           </Grid.Column>
 
@@ -97,10 +94,10 @@ export function Projects() {
             flexDirection="column"
           >
             <Card
-              title='Personal Blog'
-              description='All about my activities, thoughts, ideas, and everything that happened around me.'
-              uri='https://arrayoutofindex.wordpress.com/'
-              image='images/blog.png'
+              title="Personal Blog"
+              description="All about my activities, thoughts, ideas, and everything that happened around me."
+              uri="https://arrayoutofindex.wordpress.com/"
+              image="images/blog.png"
             />
           </Grid.Column>
 

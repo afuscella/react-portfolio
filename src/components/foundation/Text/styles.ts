@@ -23,7 +23,7 @@ const paragraph2 = css`
     line-height: ${theme.typographyVariants.paragraph2XS.lineHeight};
   `}
   ${breakpointsMedia({
-  md: css`
+    md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.paragraph2.fontSize};
         font-weight: ${theme.typographyVariants.paragraph2.fontWeight};
@@ -40,7 +40,7 @@ const title = css`
     line-height: ${theme.typographyVariants.titleXS.lineHeight};
   `}
   ${breakpointsMedia({
-  md: css`
+    md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.title.fontSize};
         font-weight: ${theme.typographyVariants.title.fontWeight};
@@ -57,7 +57,7 @@ const subTitle = css`
     line-height: ${theme.typographyVariants.subTitleXS.lineHeight};
   `}
   ${breakpointsMedia({
-  md: css`
+    md: css`
       ${({ theme }) => css`
         font-size: ${theme.typographyVariants.subTitle.fontSize};
         font-weight: ${theme.typographyVariants.subTitle.fontWeight};

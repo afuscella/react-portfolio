@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 
 import { TextBase } from './styles';
+
 interface IText {
   tag: any;
   variant: string;
@@ -27,7 +28,7 @@ export function Text({
 }
 
 Text.propTypes = {
-  color: PropTypes.string.isRequired,
+  color: PropTypes.string,
   tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
   variant: PropTypes.oneOf(['smallestException', 'title', 'subTitle', 'paragraph1', 'paragraph2']),
   children: PropTypes.node.isRequired,
@@ -36,5 +37,7 @@ Text.propTypes = {
 Text.defaultProps = {
   tag: 'span',
   variant: 'title',
-  color: '#000'
+  color: '#000',
+  target: '',
+  href: '',
 };

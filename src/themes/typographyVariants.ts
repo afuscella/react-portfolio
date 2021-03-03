@@ -89,5 +89,5 @@ export const typographyVariants: ITypographyVariants = {
     fontSize: '24px',
     fontWeight: '600',
     lineHeight: 1.25, // 125%
-  }
+  },
 };

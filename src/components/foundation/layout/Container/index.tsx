@@ -23,5 +23,4 @@ export const Box = styled.div<IContainer>`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
-
 `;

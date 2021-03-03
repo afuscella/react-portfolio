@@ -13,15 +13,15 @@ export function Menu() {
   const links = [{
     id: 1,
     text: 'Portfólio',
-    section: 'menu__section'
+    section: 'menu__section',
   }, {
     id: 2,
     text: 'About',
-    section: 'about__section'
+    section: 'about__section',
   }, {
     id: 3,
     text: 'Projects',
-    section: 'projects__section'
+    section: 'projects__section',
   }];
 
   return (
@@ -52,7 +52,7 @@ export function Menu() {
             offset={-70}
             duration={500}
           >
-            <Text variant='smallestException' tag='span'>
+            <Text variant="smallestException" tag="span">
               {link.text}
             </Text>
           </Link>

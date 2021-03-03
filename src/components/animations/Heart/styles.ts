@@ -7,28 +7,28 @@ export const HeartWrapper = styled.button`
   align-items: center;
   justify-content: center;
   border: 0;
-  padding: 6px;
+  padding: 8px;
   outline: 0;
   cursor: pointer;
 
   width: 450px;
   ${breakpointsMedia({
-  xs: css`
+    xs: css`
       width: 350px;
     `,
-  md: css`
+    md: css`
       width: 325px;
     `,
-  lg: css`
+    lg: css`
       width: 450px;
     `,
-  xl: css`
+    xl: css`
       width: 450px;
     `,
-})}
+  })}
 
   div {
-    --size: 35px;
+    --size: 30px;
     width: var(--size);
     height: var(--size);
 

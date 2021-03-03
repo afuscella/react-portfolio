@@ -9,18 +9,18 @@ export const CardWrapper = {
     width: 450px;
     ${breakpointsMedia({
     xs: css`
-        width: 350px;
-      `,
+          width: 350px;
+        `,
     md: css`
-        width: 325px;
-      `,
+          width: 325px;
+        `,
     lg: css`
-        width: 450px;
-      `,
+          width: 450px;
+        `,
     xl: css`
-        width: 450px;
-      `,
-    })}
+          width: 450px;
+        `,
+  })}
 
     a {
       text-decoration: none;
@@ -42,19 +42,19 @@ export const CardWrapper = {
 
     img {
       ${breakpointsMedia({
-      xs: css`
+    xs: css`
             width: 350px;
           `,
-      md: css`
+    md: css`
             width: 325px;
           `,
-      lg: css`
+    lg: css`
             width: 450px;
           `,
-      xl: css`
+    xl: css`
             width: 450px;
           `,
-     })}
+  })}
     }
   `,
 };

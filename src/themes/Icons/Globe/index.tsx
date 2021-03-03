@@ -13,7 +13,8 @@ const Svg = styled.svg`
 
 export function Globe() {
   return (
-    <Svg version="1.1"
+    <Svg
+      version="1.1"
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"

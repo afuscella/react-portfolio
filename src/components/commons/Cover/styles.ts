@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import styled, { css } from 'styled-components';
 
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
@@ -14,23 +13,23 @@ export const CoverWrapper = {
     font-family: ${({ theme }) => theme.fontFamily};
     min-height: 90vh;
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         margin-left: auto;
         margin-right: auto;
         padding: ${({ theme }) => theme.padding};
       `,
-      md: css`
+    md: css`
         padding-right: 16px;
         padding-left: 16px; 
         max-width: 768px;
       `,
-      lg: css`
+    lg: css`
         max-width: 1160px;
         `,
-      xl: css`
+    xl: css`
         max-width: 1222px;
       `,
-    })}
+  })}
 
     ${propToStyle('marginTop')};
   `,
@@ -42,24 +41,24 @@ export const CoverWrapper = {
     border-radius: 50%;
 
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         order: initial;
       `,
-      md: css`
+    md: css`
       order: 3;
-      `
-    })}
+      `,
+  })}
 
     img {
       border-radius: 50%;
       ${breakpointsMedia({
-        xs: css`
+    xs: css`
           width: 75%
         `,
-        md: css`
+    md: css`
           width: 100%
-        `
-      })}
+        `,
+  })}
     }
   `,
 
@@ -71,14 +70,14 @@ export const CoverWrapper = {
       justify-content: center;
     }
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         width: 100%;
         height: 100%;
       `,
-      md: css`
+    md: css`
         width: 30%;
         height: 50%;
       `,
   })}
-  `
-}
+  `,
+};

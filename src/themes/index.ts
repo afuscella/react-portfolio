@@ -1,8 +1,9 @@
 import { DefaultTheme } from 'styled-components';
 import { typographyVariants } from './typographyVariants';
-import { ModeType } from '@/types/themeModeType';
 
-const light: ModeType = {
+import { ColorsType } from '@/types/colorsType';
+
+const light: ColorsType = {
   background: {
     light: {
       color: '#f0f0f0',
@@ -35,11 +36,11 @@ const light: ModeType = {
     light: {
       color: '#f0f0f7',
       contrastText: '#fff',
-    }
+    },
   },
 };
 
-const dark: ModeType = {
+const dark: ColorsType = {
   background: {
     light: {
       color: '#000',
@@ -72,7 +73,7 @@ const dark: ModeType = {
     light: {
       color: '#070C0e',
       contrastText: '#fff',
-    }
+    },
   },
 };
 

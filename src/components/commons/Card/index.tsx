@@ -11,9 +11,11 @@ interface ICard {
   uri: string;
 }
 
-export function Card({ title, description, image, uri }: ICard) {
+export function Card({
+  title, description, image, uri,
+}: ICard) {
   return (
-    <CardWrapper.Card >
+    <CardWrapper.Card>
 
       <a href={uri} target="_blank">
         <img src={image} />

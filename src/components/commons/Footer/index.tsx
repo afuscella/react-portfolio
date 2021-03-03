@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { FooterWrapper } from './styles';
-
 import { Text } from '@/components/foundation/Text';
+
+import { FooterWrapper } from './styles';
 
 export function Footer() {
   return (
@@ -15,9 +15,9 @@ export function Footer() {
         target="_blank"
         color="secondary.light"
         textAlign={{
-          xs: 'center'
+          xs: 'center',
         }}
-        >
+      >
         Made with &#128150; by Arthur Fuscella Silva
       </Text>
 

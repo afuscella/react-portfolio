@@ -22,7 +22,7 @@ export default function Home() {
     >
 
       <Menu />
-      
+
       <Cover
         as={motion.section}
         transition={{ delay: 0, duration: 0.5 }}
@@ -35,7 +35,7 @@ export default function Home() {
       />
 
       <About />
-      
+
       <Projects />
 
       <Footer />
