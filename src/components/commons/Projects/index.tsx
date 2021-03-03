@@ -12,7 +12,6 @@ export function Projects() {
     <ProjectsWrapper
       id="projects__section"
     >
-
       <Grid.Container>
         <Grid.Row>
 
@@ -69,6 +68,7 @@ export function Projects() {
               uri='https://instalura.oarthursilva.vercel.app/'
               image='images/instalura.png'
             />
+
           </Grid.Column>
         </Grid.Row>
 

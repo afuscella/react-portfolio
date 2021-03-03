@@ -3,9 +3,7 @@ import styled, { css } from 'styled-components';
 import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
 
 export const CardWrapper = {
-  Card: styled.section`
-    background: ${({ theme }) => `${theme.colors.tertiary.light.color}20`};
-    text-decoration: none;
+  Card: styled.section`   
     margin-bottom: 12px;
     box-shadow: ${({ theme }) => `0 1px 0 ${theme.colors.tertiary.main.color}20`};
     width: 450px;
@@ -22,37 +20,41 @@ export const CardWrapper = {
     xl: css`
         width: 450px;
       `,
-  })}
+    })}
 
-    &:hover,
-    &:focus {
-      opacity: .7;
-      transition: ${({ theme }) => theme.transition};
-      cursor: pointer;
+    a {
+      text-decoration: none;
+      &:hover,
+      &:focus {
+        opacity: .7;
+        transition: ${({ theme }) => theme.transition};
+        cursor: pointer;
+      }
     }
 
     article {
       display: flex;
-      flex-wrap: wrap;
       flex-direction: column;
-      padding: ${({ theme }) => theme.padding};
+      flex-wrap: wrap;
+      padding-left: 15px;
+      padding-right: 15px;
     }
 
     img {
       ${breakpointsMedia({
-    xs: css`
-          width: 350px;
-        `,
-    md: css`
-          width: 325px;
-        `,
-    lg: css`
-          width: 450px;
-        `,
-    xl: css`
-          width: 450px;
-        `,
-  })}
+      xs: css`
+            width: 350px;
+          `,
+      md: css`
+            width: 325px;
+          `,
+      lg: css`
+            width: 450px;
+          `,
+      xl: css`
+            width: 450px;
+          `,
+     })}
     }
   `,
 };
