@@ -14,6 +14,7 @@ interface IContainer {
 }
 
 export const Box = styled.div<IContainer>`
+  transition: ${({ theme }) => theme.transition};
   ${propToStyle('flex')}
   ${propToStyle('display')}
   ${propToStyle('flexDirection')}
