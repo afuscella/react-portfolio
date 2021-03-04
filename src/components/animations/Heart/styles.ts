@@ -1,31 +1,14 @@
-import styled, { css } from 'styled-components';
-import { breakpointsMedia } from '@/themes/utils/breakpointsMedia';
+import styled from 'styled-components';
 
 export const HeartWrapper = styled.button`
-  background: ${({ theme }) => `${theme.colors.tertiary.light.color}`};
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
   border: 0;
   padding: 8px;
   outline: 0;
   cursor: pointer;
-
-  width: 450px;
-  ${breakpointsMedia({
-    xs: css`
-      width: 350px;
-    `,
-    md: css`
-      width: 325px;
-    `,
-    lg: css`
-      width: 450px;
-    `,
-    xl: css`
-      width: 450px;
-    `,
-  })}
 
   div {
     --size: 30px;
