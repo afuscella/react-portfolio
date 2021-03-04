@@ -36,16 +36,16 @@ export const CardWrapper = {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      align-items: center;
+    }
 
-      article {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: 15px;
-      }
+    article {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
 
-      img {
+    img {
         ${breakpointsMedia({
     xs: css`
               width: 350px;
@@ -61,6 +61,5 @@ export const CardWrapper = {
             `,
   })}
       }
-    }
   `,
 };
