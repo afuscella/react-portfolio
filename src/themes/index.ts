@@ -78,8 +78,8 @@ const dark: ColorsType = {
 };
 
 export const colors = {
-  light: light,
-  dark: dark,
+  light,
+  dark,
 };
 
 export const breakpoints = {
@@ -95,7 +95,7 @@ const theme: DefaultTheme = {
   typographyVariants,
   breakpoints,
   padding: '15px',
-  transition: '200ms ease-in-out',
+  transition: '.3s ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };
 
