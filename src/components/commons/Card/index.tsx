@@ -4,6 +4,7 @@ import { Text } from '@/components/foundation/Text';
 import { Heart } from '@/components/animations/Heart';
 
 import { CardWrapper } from './styles';
+
 interface ICard {
   title: string;
   description: string;
@@ -17,9 +18,11 @@ export function Card({
   return (
     <CardWrapper.Card>
 
-      <a href={uri} target="_blank">
-        <img src={image} />
+      <a href={uri} target="_blank" rel="noreferrer">
+        <img src={image} alt="the project snapshot" />
+      </a>
 
+      <div>
         <article>
           <Text
             variant="paragraph2"
@@ -36,11 +39,10 @@ export function Card({
           >
             {description}
           </Text>
-
         </article>
-      </a>
 
-      <Heart />
+        <Heart />
+      </div>
 
     </CardWrapper.Card>
   );

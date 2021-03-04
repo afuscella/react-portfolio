@@ -32,29 +32,35 @@ export const CardWrapper = {
       }
     }
 
-    article {
+    div {
       display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
 
-    img {
-      ${breakpointsMedia({
+      article {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        padding: 15px;
+      }
+
+      img {
+        ${breakpointsMedia({
     xs: css`
-            width: 350px;
-          `,
+              width: 350px;
+            `,
     md: css`
-            width: 325px;
-          `,
+              width: 325px;
+            `,
     lg: css`
-            width: 450px;
-          `,
+              width: 450px;
+            `,
     xl: css`
-            width: 450px;
-          `,
+              width: 450px;
+            `,
   })}
+      }
     }
   `,
 };
