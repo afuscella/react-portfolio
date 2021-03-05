@@ -50,7 +50,16 @@ export const CoverWrapper = {
   })}
 
     img {
+      box-shadow: 0px 0px 10px 4px #747de8;
+      animation: glow 7s ease-in-out infinite alternate;
       border-radius: 50%;
+
+      @keyframes glow {
+        to {
+          box-shadow: 0px 0px 8px 2px #535fed;
+        }
+      }
+
       ${breakpointsMedia({
     xs: css`
           width: 75%
