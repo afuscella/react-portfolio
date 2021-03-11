@@ -9,7 +9,7 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "framer-motion": "^3.6.7",
+    "framer-motion": "^3.10.2",
     "lodash": "^4.17.20",
     "next": "latest",
     "prop-types": "^15.7.2",
