@@ -13,6 +13,7 @@ declare module 'styled-components' {
     },
     typographyVariants: ITypographyVariants;
     padding: string;
+    borderRadius: string;
     transition: string;
     fontFamily: string;
   }
