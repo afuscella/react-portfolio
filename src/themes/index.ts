@@ -68,7 +68,7 @@ const dark: ColorsType = {
   tertiary: {
     main: {
       color: '#f0f0f7',
-      contrastText: '#fff',
+      contrastText: '#070C0e',
     },
     light: {
       color: '#070C0e',
@@ -95,6 +95,7 @@ const theme: DefaultTheme = {
   typographyVariants,
   breakpoints,
   padding: '15px',
+  borderRadius: '8px',
   transition: '.3s ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };

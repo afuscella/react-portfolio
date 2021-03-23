@@ -44,7 +44,6 @@ export const MenuWrapper = {
     ${breakpointsMedia({
     md: css`
         order: initial;
-        padding-right: 16px;
       `,
   })}
   `,

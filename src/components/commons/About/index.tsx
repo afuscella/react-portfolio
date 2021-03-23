@@ -45,7 +45,7 @@ export function About() {
                 tag="p"
                 color="primary.main"
                 textAlign={{
-                  xs: 'start'
+                  xs: 'start',
                 }}
               >
                 Arthur Fuscella Silva is bachelor degree in Computer

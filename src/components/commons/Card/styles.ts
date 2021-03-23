@@ -42,7 +42,7 @@ export const CardWrapper = {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-      padding: 15px;
+      padding: ${({ theme }) => theme.padding};
     }
 
     img {

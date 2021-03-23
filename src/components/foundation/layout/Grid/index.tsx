@@ -22,8 +22,7 @@ export const Grid = {
       `,
     md: css`
         max-width: 768px;
-        padding-right: 16px;
-        padding-left: 16px; 
+
       `,
     lg: css`
         max-width: 1160px; 
@@ -38,12 +37,13 @@ export const Grid = {
     display: flex;
     flex-wrap: wrap;
 
-    ${breakpointsMedia({
-    sm: css`
-        margin-left: -16px;
-        margin-right: -16px;
-      `,
-  })}
+    ${propToStyle('flex')}
+    ${propToStyle('justifyContent')}
+
+    ${propToStyle('marginLeft')}    
+    ${propToStyle('marginRight')}
+    ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
   `,
 
   Column: styled.div`
@@ -51,19 +51,14 @@ export const Grid = {
     flex-grow: 1;
     max-width: 100%;
 
-    ${breakpointsMedia({
-    sm: css`
-        padding-left: 16px;
-        padding-right: 16px;
-      `,
-  })}
-
+    ${propToStyle('flex')}
     ${propToStyle('display')}
     ${propToStyle('alignItems')}
     ${propToStyle('justifyContent')}
     ${propToStyle('flexDirection')}
 
     ${propToStyle('marginTop')}
+    ${propToStyle('paddingRight')}
 
     ${({ offset }) => {
     if (typeof offset === 'number') {
