@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "commit": "cz",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "lint:fix": "eslint ./ --fix",
+    "lint": "eslint --ignore-path .gitignore ."
   },
   "dependencies": {
     "framer-motion": "^3.6.7",
