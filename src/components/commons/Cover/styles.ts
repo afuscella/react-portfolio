@@ -8,10 +8,12 @@ export const CoverWrapper = {
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
     font-family: ${({ theme }) => theme.fontFamily};
     min-height: 90vh;
+
     ${breakpointsMedia({
     xs: css`
         margin-left: auto;
@@ -19,8 +21,6 @@ export const CoverWrapper = {
         padding: ${({ theme }) => theme.padding};
       `,
     md: css`
-        padding-right: 16px;
-        padding-left: 16px; 
         max-width: 768px;
       `,
     lg: css`
@@ -30,11 +30,26 @@ export const CoverWrapper = {
         max-width: 1222px;
       `,
   })}
-
     ${propToStyle('marginTop')};
   `,
 
-  Header: styled.div`
+  Content: styled.div`
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+
+    ${breakpointsMedia({
+    xs: css`
+      flex-direction: column;
+    `,
+    md: css`
+      flex-direction: row;
+    `,
+  })}
+
+  `,
+
+  Right: styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -59,19 +74,10 @@ export const CoverWrapper = {
           box-shadow: 0px 0px 8px 2px #535fed;
         }
       }
-
-      ${breakpointsMedia({
-    xs: css`
-          width: 75%
-        `,
-    md: css`
-          width: 100%
-        `,
-  })}
     }
   `,
 
-  Content: styled.div`
+  Left: styled.div`
     order: 3;
     nav {
       display: flex;
@@ -88,5 +94,9 @@ export const CoverWrapper = {
         height: 50%;
       `,
   })}
+  `,
+
+  Bottom: styled.footer`
+    order: 4;
   `,
 };
