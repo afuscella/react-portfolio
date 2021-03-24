@@ -38,6 +38,14 @@ const light: ColorsType = {
       contrastText: '#fff',
     },
   },
+  quaternary: {
+    main: {
+      color: '#070C0e',
+    },
+    light: {
+      color: '#495057',
+    },
+  },
 };
 
 const dark: ColorsType = {
@@ -75,6 +83,14 @@ const dark: ColorsType = {
       contrastText: '#fff',
     },
   },
+  quaternary: {
+    main: {
+      color: '#070C0e',
+    },
+    light: {
+      color: '#88989e',
+    },
+  }
 };
 
 export const colors = {
@@ -95,7 +111,7 @@ const theme: DefaultTheme = {
   typographyVariants,
   breakpoints,
   padding: '15px',
-  borderRadius: '8px',
+  borderRadius: '15px',
   transition: '.3s ease-in-out',
   fontFamily: '\'Rubik\', sans-serif',
 };

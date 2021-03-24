@@ -32,5 +32,13 @@ export type ColorsType = {
       color: string;
       contrastText: string;
     }
+  },
+  quaternary: {
+    main: {
+      color: string;
+    };
+    light: {
+      color: string;
+    }
   };
 }
