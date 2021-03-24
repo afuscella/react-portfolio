@@ -1,21 +1,170 @@
-import React from 'react';
-import { Grid } from "@/components/foundation/layout/Grid";
-import { Text } from "@/components/foundation/Text";
-import { Box } from '@/components/foundation/layout/Container';
+/* eslint-disable import/no-unresolved */
+import React, { useContext, useState } from 'react';
+import { Lottie } from '@crello/react-lottie';
+
+import { Grid } from '@/components/foundation/layout/Grid';
+import { Text } from '@/components/foundation/Text';
+import { Box, BorderedBox } from '@/components/foundation/layout/Container';
+import { TextField } from '@/components/form/TextField';
+import { Button } from '@/components/commons/Button';
+import { WebsitePageContext } from '@/components/wrapper/WebsitePage';
+
+import successAnimation from '@/components/animations/success.json';
+import errorAnimation from '@/components/animations/error.json';
+
+const formState = {
+  DEFAULT: 'DEFAULT',
+  LOADING: 'LOADING',
+  DONE: 'DONE',
+  ERROR: 'ERROR',
+};
+
+function FormClose({ onClose }) {
+  return (
+    <Box
+      justifyContent="flex-end"
+      display={{
+        xs: 'none',
+        md: 'flex',
+      }}
+    >
+      <Button
+        onClick={onClose}
+        type="reset"
+        margin={{
+          xs: 'auto',
+          md: 'initial',
+        }}
+        display="block"
+      >
+        <Text
+          variant="paragraph1"
+          tag="span"
+          color="quaternary.light"
+        >
+          Fechar [X]
+        </Text>
+      </Button>
+    </Box>
+  );
+}
 
 function FormContent() {
+  const [messageInfo, setMessageInfo] = useState({ name: '', message: '' });
+  const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
+  const [submitStatus, setSubmitStatus] = useState<string>(formState.DEFAULT);
+  const { toggleModalContact } = useContext(WebsitePageContext);
+
+  function handleOnClose() {
+    setMessageInfo({ name: '', message: '' });
+    toggleModalContact();
+  }
+
+  function handleInputChange(e) {
+    const fieldName = e.target.getAttribute('name');
+    setMessageInfo({
+      ...messageInfo,
+      [fieldName]: e.target.value,
+    });
+  }
+
+  const isFormInputValid = messageInfo.name.length === 0 || messageInfo.message.length <= 10;
+  const isFormContentDisplay = formState.DEFAULT ? 'block' : 'none';
+
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
+      setIsFormSubmitted(true);
+      setSubmitStatus(formState.DEFAULT);
+
+      const messageDTO = {
+        name: messageInfo.name,
+        message: messageInfo.message,
+      };
+
+      setSubmitStatus(formState.DONE);
     }}
     >
-      <Text
-        variant="title"
-        tag="h1"
-        color="secondary.main"
-      >
-        Entre em contato comigo
-      </Text>
+      <FormClose onClose={handleOnClose} />
+
+      {!isFormSubmitted && submitStatus === formState.DEFAULT && (
+      <Box>
+        <Text
+          variant="subTitle"
+          tag="h1"
+          color="secondary.main"
+        >
+          Entre em contato comigo
+        </Text>
+
+        <Text
+          variant="paragraph1"
+          tag="p"
+          color="quaternary.main"
+          marginBottom="32px"
+        >
+          Envie uma mensagem diretamente para mim,
+          vou fazer o possível pra te responder
+          o mais breve possível.
+        </Text>
+
+        <div>
+          <TextField
+            placeholder="Nome"
+            name="name"
+            value={messageInfo.name}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <div>
+          <TextField
+            placeholder="Mensagem"
+            name="message"
+            value={messageInfo.message}
+            onChange={handleInputChange}
+          />
+        </div>
+
+        <Button
+          variant="primary.light"
+          type="submit"
+          disabled={isFormInputValid}
+          fullWidth
+        >
+          Enviar
+        </Button>
+      </Box>
+      )}
+
+      {isFormSubmitted && submitStatus === formState.DONE && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            className="lottie-container basic"
+            config={{ animationData: successAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
+      )}
+
+      {isFormSubmitted && submitStatus === formState.ERROR && (
+        <Box
+          display="flex"
+          justifyContent="center"
+        >
+          <Lottie
+            width="150px"
+            height="150px"
+            className="lottie-container basic"
+            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
+          />
+        </Box>
+      )}
+
     </form>
   );
 }
@@ -27,30 +176,36 @@ export function FormContact({ props }) {
       flex={1}
       marginLeft={0}
       marginRight={0}
-      justifyContent="flex-end"
+      justifyContent="center"
     >
       <Grid.Column
         flex={1}
         display="flex"
+        alignItems="flex-end"
         paddingRight={{ md: '0' }}
-        value={{ xs: 12, md: 5, lg: 4 }}
+        value={{ xs: 12, md: 10, lg: 6 }}
       >
-        <Box
+        <BorderedBox
           flex={1}
           display="flex"
           boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
           flexDirection="column"
           justifyContent="center"
-          padding={{
-            xs: '16px',
-            md: '85px',
-          }}
           backgroundColor="white"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...props}
         >
-          <FormContent />
-        </Box>
+          <Box
+            flex={1}
+            alignItems="center"
+            padding={{
+              xs: '32px',
+              md: '64px',
+            }}
+          >
+            <FormContent />
+          </Box>
+        </BorderedBox>
 
       </Grid.Column>
     </Grid.Row>
