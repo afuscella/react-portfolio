@@ -18,10 +18,10 @@ export function Modal({ isOpen, onClose, children }) {
       <motion.div
         variants={{
           open: {
-            x: 0,
+            y: 0,
           },
           closed: {
-            x: '100%',
+            y: '100%',
           },
         }}
         animate={isOpen ? 'open' : 'closed'}
