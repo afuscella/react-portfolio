@@ -12,6 +12,7 @@ export function Button({
 }: IButton) {
   const hasHref = Boolean(href);
   const tag = hasHref ? 'button' : 'button';
+
   return (
     <ButtonBase
       as={tag}
@@ -25,5 +26,4 @@ export function Button({
 
 Button.defaultProps = {
   href: undefined,
-  // ghost: false,
 };

@@ -28,7 +28,7 @@ export const ButtonBase = styled.button`
 
   &:disabled {
     cursor: not-allowed;
-    opacity: .2;
+    opacity: 1;
   }
 
   ${({ fullWidth }) => fullWidth && css`

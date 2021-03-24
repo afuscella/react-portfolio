@@ -29,9 +29,9 @@ export function Text({
 
 Text.propTypes = {
   color: PropTypes.string,
-  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span']),
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'li', 'a', 'span', 'input']),
   variant: PropTypes.oneOf(['smallestException', 'title', 'subTitle', 'paragraph1', 'paragraph2']),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 Text.defaultProps = {
@@ -40,4 +40,5 @@ Text.defaultProps = {
   color: '#000',
   target: '',
   href: '',
+  children: null,
 };
