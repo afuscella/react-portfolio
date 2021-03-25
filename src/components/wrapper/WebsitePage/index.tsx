@@ -1,23 +1,31 @@
 import React, {
   createContext,
+  ReactNode,
   useContext,
   useState,
 } from 'react';
 
-import { Box } from '@/components/foundation/layout/Container';
-import { Meta } from '@/components/commons/Meta';
 import { Modal } from '@/components/commons/Modal';
+import { SEO, ISEO } from '@/components/commons/SEO';
+import { Box } from '@/components/foundation/layout/Container';
 import { FormContact } from '@/components/pattern/FormContact';
+
 import ThemeContext from '@/context/Theme';
 
 export const WebsitePageContext = createContext({
   toggleModalContact: () => { },
 });
 
+export interface IWebsitePageWrapper {
+  children?: ReactNode | ReactNode[] | null;
+  seoProps: ISEO;
+}
+
 export default function WebsitePageWrapper({
   children,
   pageBoxProps,
-}) {
+  seoProps,
+}: IWebsitePageWrapper) {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const { themeName } = useContext(ThemeContext);
 
@@ -29,7 +37,10 @@ export default function WebsitePageWrapper({
         },
       }}
     >
-      <Meta />
+      <SEO
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...seoProps}
+      />
 
       <Box
         flex={1}
@@ -53,3 +64,7 @@ export default function WebsitePageWrapper({
     </WebsitePageContext.Provider>
   );
 }
+
+WebsitePageWrapper.defaultProps = {
+  children: null,
+};
