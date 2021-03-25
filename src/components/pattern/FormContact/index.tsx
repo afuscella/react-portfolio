@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Suspense } from 'react';
 import { Lottie } from '@crello/react-lottie';
 
 import { Grid } from '@/components/foundation/layout/Grid';
@@ -11,6 +11,7 @@ import { WebsitePageContext } from '@/components/wrapper/WebsitePage';
 
 import successAnimation from '@/components/animations/success.json';
 import errorAnimation from '@/components/animations/error.json';
+import { Loader } from '@/components/commons/Loader';
 
 const formState = {
   DEFAULT: 'DEFAULT',
@@ -50,13 +51,15 @@ function FormClose({ onClose }) {
 }
 
 function FormContent() {
-  const [messageInfo, setMessageInfo] = useState({ name: '', message: '' });
+  const [messageInfo, setMessageInfo] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
   const [submitStatus, setSubmitStatus] = useState<string>(formState.DEFAULT);
   const { toggleModalContact } = useContext(WebsitePageContext);
 
   function handleOnClose() {
-    setMessageInfo({ name: '', message: '' });
+    setMessageInfo({ name: '', email: '', message: '' });
+    setSubmitStatus(formState.DEFAULT);
+    setIsFormSubmitted(false);
     toggleModalContact();
   }
 
@@ -68,7 +71,10 @@ function FormContent() {
     });
   }
 
-  const isFormInputValid = messageInfo.name.length === 0 || messageInfo.message.length <= 10;
+  const isFormInputValid = Boolean(messageInfo.name.length)
+    && Boolean(messageInfo.email.length)
+    && Boolean(messageInfo.message.length);
+
   const isFormContentDisplay = formState.DEFAULT ? 'block' : 'none';
 
   return (
@@ -79,6 +85,7 @@ function FormContent() {
 
       const messageDTO = {
         name: messageInfo.name,
+        email: messageInfo.email,
         message: messageInfo.message,
       };
 
@@ -88,53 +95,62 @@ function FormContent() {
       <FormClose onClose={handleOnClose} />
 
       {!isFormSubmitted && submitStatus === formState.DEFAULT && (
-      <Box>
-        <Text
-          variant="subTitle"
-          tag="h1"
-          color="secondary.main"
-        >
-          Entre em contato comigo
-        </Text>
+        <Box>
+          <Text
+            variant="subTitle"
+            tag="h1"
+            color="secondary.main"
+          >
+            Entre em contato comigo
+          </Text>
 
-        <Text
-          variant="paragraph1"
-          tag="p"
-          color="quaternary.main"
-          marginBottom="32px"
-        >
-          Envie uma mensagem diretamente para mim,
-          vou fazer o possível pra te responder
-          o mais breve possível.
-        </Text>
+          <Text
+            variant="paragraph1"
+            tag="p"
+            color="quaternary.main"
+            marginBottom="32px"
+          >
+            Envie uma mensagem diretamente para mim,
+            vou fazer o possível pra te responder
+            o mais breve possível.
+          </Text>
 
-        <div>
-          <TextField
-            placeholder="Nome"
-            name="name"
-            value={messageInfo.name}
-            onChange={handleInputChange}
-          />
-        </div>
+          <div>
+            <TextField
+              placeholder="Nome"
+              name="name"
+              value={messageInfo.name}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        <div>
-          <TextField
-            placeholder="Mensagem"
-            name="message"
-            value={messageInfo.message}
-            onChange={handleInputChange}
-          />
-        </div>
+          <div>
+            <TextField
+              placeholder="E-mail"
+              name="email"
+              value={messageInfo.email}
+              onChange={handleInputChange}
+            />
+          </div>
 
-        <Button
-          variant="primary.light"
-          type="submit"
-          disabled={isFormInputValid}
-          fullWidth
-        >
-          Enviar
-        </Button>
-      </Box>
+          <div>
+            <TextField
+              placeholder="Mensagem"
+              name="message"
+              value={messageInfo.message}
+              onChange={handleInputChange}
+            />
+          </div>
+
+          <Button
+            variant="primary.light"
+            type="submit"
+            disabled={!isFormInputValid}
+            fullWidth
+          >
+            Enviar
+          </Button>
+        </Box>
       )}
 
       {isFormSubmitted && submitStatus === formState.DONE && (
@@ -197,17 +213,21 @@ export function FormContact({ props }) {
         >
           <Box
             flex={1}
+            position="relative"
             alignItems="center"
             padding={{
               xs: '32px',
               md: '64px',
             }}
           >
-            <FormContent />
+            <Loader>
+              <FormContent />
+            </Loader>
+
           </Box>
         </BorderedBox>
 
       </Grid.Column>
-    </Grid.Row>
+    </Grid.Row >
   );
 }

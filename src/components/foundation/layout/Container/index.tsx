@@ -4,9 +4,10 @@ import { propToStyle } from '@/themes/utils/propToStyle';
 
 interface IContainer {
   flex?: number;
-  display?: string;
   flexWrap?: string;
   flexDirection?: string;
+  display?: string;
+  position?: string;
   justifyContent?: string;
   backgroundImage?: string;
   backgroundRepeat?: string;
@@ -16,9 +17,10 @@ interface IContainer {
 export const Box = styled.div<IContainer>`
   transition: ${({ theme }) => theme.transition};
   ${propToStyle('flex')}
-  ${propToStyle('display')}
   ${propToStyle('flexWrap')}
   ${propToStyle('flexDirection')}
+  ${propToStyle('display')}
+  ${propToStyle('position')}
   ${propToStyle('justifyContent')}
   ${propToStyle('alignItems')}
   ${propToStyle('background')}
