@@ -1,23 +1,37 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const LoaderWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  background-color: rgba(0,0,0,0.6);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+export const LoaderWrapper = {
+  Content: styled.div``,
+  Loader: styled.div`
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: ${({ theme }) => theme.transition};
+    z-index: 100;
 
-  span.loader__ball {
-    display: inline-block;
-    margin: auto 0.25rem;
-    height: 0.75rem;
-    width: 0.75rem;
-    border-radius: 0.375rem;
-    background: #06c;
+    ${({ isRunning }) => {
+      if (isRunning) {
+        return css`
+          display: flex; 
+        `;
+      }
+      return css`
+        display: none;
+      `;
+    }}
+
+    span.loader__ball {
+      display: inline-block;
+      margin: auto 0.25rem;
+      height: 0.75rem;
+      width: 0.75rem;
+      border-radius: 0.375rem;
+      background: #06c;
 
     &.loader__ball--1,
     &.loader__ball--2,
@@ -46,4 +60,5 @@ export const LoaderWrapper = styled.div`
       }
     }
   }
-`;
+  `
+}
