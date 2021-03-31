@@ -1,20 +1,37 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import { Button } from '@/components/commons/Button';
-import { Text } from '@/components/foundation/Text';
 import { SocialMedias } from '@/components/commons/SocialMedias';
+
+import { Text } from '@/components/foundation/Text';
+import { Grid } from '@/components/foundation/layout/Grid';
 import { WebsitePageContext } from '@/components/wrapper/WebsitePage';
 
 import { CoverWrapper } from './styles';
-import { useContext } from 'react';
 
 export function Cover({ ...props }) {
-  const { toggleModalContact } = useContext(WebsitePageContext);
+  const { isLoaderRunning, toggleLoaderRunning, toggleModalContact } = useContext(WebsitePageContext);
   return (
     <CoverWrapper.Cover
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
+      <CoverWrapper.Header>
+        <Grid.Row
+          flex={1}
+          display="flex"
+          justifyContent={{
+            xs: 'center',
+            md: 'flex-start'
+          }}
+          padding={{
+            xs: '20px',
+            md: '0',
+          }}
+        >
+        </Grid.Row>
+      </CoverWrapper.Header>
+
       <CoverWrapper.Content>
         <CoverWrapper.Left>
           <Text
@@ -62,17 +79,25 @@ export function Cover({ ...props }) {
       </CoverWrapper.Content>
 
       <CoverWrapper.Bottom>
-        <Button
-          variant="tertiary.main"
-          margin={{
-            xs: 'auto',
-            md: 'initial',
-          }}
-          display="block"
-          onClick={toggleModalContact}
+        <Grid.Row
+          display="flex"
+          justifyContent="center"
         >
-          Entre em contato
+          <Button
+            variant="tertiary.main"
+            margin={{
+              xs: 'auto',
+              md: 'initial',
+            }}
+            display="block"
+            onClick={() => {
+              isLoaderRunning && toggleLoaderRunning();
+              toggleModalContact();
+            }}
+          >
+            Entre em contato
         </Button>
+        </Grid.Row>
       </CoverWrapper.Bottom>
 
     </CoverWrapper.Cover>

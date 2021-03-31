@@ -2,7 +2,7 @@
 import React from 'react';
 
 import WebsiteGlobalProvider from '../provider';
-import WebsitePageWrapper from '..';
+import WebsitePageWrapper, { IWebsitePageWrapper } from '..';
 
 export function websitePageHOC(PageComponent, { pageWrapperProps }) {
   // eslint-disable-next-line no-undef

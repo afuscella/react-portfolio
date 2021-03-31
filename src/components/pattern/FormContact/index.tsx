@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, Suspense } from 'react';
 import { Lottie } from '@crello/react-lottie';
 
 import { Grid } from '@/components/foundation/layout/Grid';
@@ -11,6 +11,7 @@ import { WebsitePageContext } from '@/components/wrapper/WebsitePage';
 
 import successAnimation from '@/components/animations/success.json';
 import errorAnimation from '@/components/animations/error.json';
+import { Loader } from '@/components/commons/Loader';
 
 const formState = {
   DEFAULT: 'DEFAULT',
@@ -20,6 +21,10 @@ const formState = {
 };
 
 function FormClose({ onClose }) {
+  const { isLoaderRunning } = useContext(WebsitePageContext);
+
+  const isInputFieldDisabled = isLoaderRunning;
+
   return (
     <Box
       justifyContent="flex-end"
@@ -31,6 +36,7 @@ function FormClose({ onClose }) {
       <Button
         onClick={onClose}
         type="reset"
+        disabled={isInputFieldDisabled}
         margin={{
           xs: 'auto',
           md: 'initial',
@@ -50,13 +56,17 @@ function FormClose({ onClose }) {
 }
 
 function FormContent() {
-  const [messageInfo, setMessageInfo] = useState({ name: '', message: '' });
+  const [messageInfo, setMessageInfo] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
   const [submitStatus, setSubmitStatus] = useState<string>(formState.DEFAULT);
-  const { toggleModalContact } = useContext(WebsitePageContext);
+  const { isLoaderRunning, toggleLoaderRunning, toggleModalContact } = useContext(WebsitePageContext);
+
+  const isInputFieldDisabled = isLoaderRunning;
 
   function handleOnClose() {
-    setMessageInfo({ name: '', message: '' });
+    setMessageInfo({ name: '', email: '', message: '' });
+    setSubmitStatus(formState.DEFAULT);
+    setIsFormSubmitted(false);
     toggleModalContact();
   }
 
@@ -68,26 +78,28 @@ function FormContent() {
     });
   }
 
-  const isFormInputValid = messageInfo.name.length === 0 || messageInfo.message.length <= 10;
-  const isFormContentDisplay = formState.DEFAULT ? 'block' : 'none';
+  const isFormInputValid = Boolean(messageInfo.name.length)
+    && Boolean(messageInfo.email.length)
+    && Boolean(messageInfo.message.length);
 
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
+      toggleLoaderRunning();
       setIsFormSubmitted(true);
       setSubmitStatus(formState.DEFAULT);
 
-      const messageDTO = {
-        name: messageInfo.name,
-        message: messageInfo.message,
-      };
+      // const messageDTO = {
+      //   name: messageInfo.name,
+      //   email: messageInfo.email,
+      //   message: messageInfo.message,
+      // };
 
       setSubmitStatus(formState.DONE);
     }}
     >
       <FormClose onClose={handleOnClose} />
 
-      {!isFormSubmitted && submitStatus === formState.DEFAULT && (
       <Box>
         <Text
           variant="subTitle"
@@ -95,7 +107,7 @@ function FormContent() {
           color="secondary.main"
         >
           Entre em contato comigo
-        </Text>
+          </Text>
 
         <Text
           variant="paragraph1"
@@ -106,71 +118,50 @@ function FormContent() {
           Envie uma mensagem diretamente para mim,
           vou fazer o possível pra te responder
           o mais breve possível.
-        </Text>
+          </Text>
 
-        <div>
-          <TextField
-            placeholder="Nome"
-            name="name"
-            value={messageInfo.name}
-            onChange={handleInputChange}
-          />
-        </div>
 
-        <div>
-          <TextField
-            placeholder="Mensagem"
-            name="message"
-            value={messageInfo.message}
-            onChange={handleInputChange}
-          />
-        </div>
+        <TextField
+          placeholder="Nome"
+          disabled={isInputFieldDisabled}
+          name="name"
+          value={messageInfo.name}
+          onChange={handleInputChange}
+        />
+
+        <TextField
+          placeholder="E-mail"
+          disabled={isInputFieldDisabled}
+          name="email"
+          value={messageInfo.email}
+          onChange={handleInputChange}
+        />
+
+        <TextField
+          placeholder="Mensagem"
+          disabled={isInputFieldDisabled}
+          name="message"
+          value={messageInfo.message}
+          onChange={handleInputChange}
+        />
 
         <Button
           variant="primary.light"
           type="submit"
-          disabled={isFormInputValid}
+          disabled={isInputFieldDisabled}
           fullWidth
         >
           Enviar
         </Button>
       </Box>
-      )}
-
-      {isFormSubmitted && submitStatus === formState.DONE && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie-container basic"
-            config={{ animationData: successAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
-      )}
-
-      {isFormSubmitted && submitStatus === formState.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie-container basic"
-            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
-      )}
-
     </form>
   );
 }
 
 // eslint-disable-next-line react/prop-types
 export function FormContact({ props }) {
+  const { isLoaderRunning } = useContext(WebsitePageContext);
+
   return (
     <Grid.Row
       flex={1}
@@ -187,6 +178,7 @@ export function FormContact({ props }) {
       >
         <BorderedBox
           flex={1}
+          disabled={isLoaderRunning}
           display="flex"
           boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
           flexDirection="column"
@@ -197,17 +189,23 @@ export function FormContact({ props }) {
         >
           <Box
             flex={1}
+            position="relative"
             alignItems="center"
             padding={{
               xs: '32px',
               md: '64px',
             }}
           >
-            <FormContent />
+            <Loader
+              isRunning={isLoaderRunning}
+            >
+              <FormContent />
+            </Loader>
+
           </Box>
         </BorderedBox>
 
       </Grid.Column>
-    </Grid.Row>
+    </Grid.Row >
   );
 }

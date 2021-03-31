@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Lottie from 'react-lottie';
 
-import heartData from 'public/animations/twitter-heart.json';
+import heartData from '../../../../public/animations/twitter-heart.json';
 
 import { HeartWrapper } from './styles';
 
