@@ -1,23 +1,24 @@
 /* eslint-disable arrow-body-style */
-import React, { FC } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { InputBase, InputWrapper } from './styles';
 
 interface ITextField {
   placeholder: string;
+  disabled: boolean;
   name: string;
   onChange: () => {};
   value: string;
 }
 
-export const TextField: FC<ITextField> = ({
-  placeholder, name, onChange, value,
-}) => {
+export function TextField({
+  placeholder, name, disabled, onChange, value }: ITextField) {
   return (
     <InputWrapper>
       <InputBase
         type="text"
         placeholder={placeholder}
+        disabled={disabled}
         name={name}
         onChange={onChange}
         value={value}

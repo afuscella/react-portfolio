@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 import { propToStyle } from '@/themes/utils/propToStyle';
 
@@ -47,12 +47,14 @@ interface IBorderedBox {
   children: ReactNode | ReactNode[],
 }
 
-export const BorderedBox: FC<IBorderedBox> = ({ children, ...props }) => (
-  <BorderedBoxWrapper
-    as={Box}
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    {...props}
-  >
-    {children}
-  </BorderedBoxWrapper>
-);
+export function BorderedBox({ children, ...props }: IBorderedBox) {
+  return (
+    <BorderedBoxWrapper
+      as={Box}
+      // eslint-disable-next-line react/jsx-props-no-spreading
+      {...props}
+    >
+      {children}
+    </BorderedBoxWrapper>
+  );
+};
