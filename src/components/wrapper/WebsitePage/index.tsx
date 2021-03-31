@@ -13,6 +13,8 @@ import { FormContact } from '@/components/pattern/FormContact';
 import ThemeContext from '@/context/Theme';
 
 export const WebsitePageContext = createContext({
+  isLoaderRunning: false,
+  toggleLoaderRunning: () => { },
   toggleModalContact: () => { },
 });
 
@@ -26,12 +28,17 @@ export default function WebsitePageWrapper({
   pageBoxProps,
   seoProps,
 }: IWebsitePageWrapper) {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState<boolean>(false);
+  const [isLoaderRunning, setIsLoaderRunning] = useState<boolean>(false);
   const { themeName } = useContext(ThemeContext);
 
   return (
     <WebsitePageContext.Provider
       value={{
+        isLoaderRunning,
+        toggleLoaderRunning: () => {
+          setIsLoaderRunning(!isLoaderRunning);
+        },
         toggleModalContact: () => {
           setIsContactModalOpen(!isContactModalOpen);
         },

@@ -21,6 +21,10 @@ const formState = {
 };
 
 function FormClose({ onClose }) {
+  const { isLoaderRunning } = useContext(WebsitePageContext);
+
+  const isInputFieldDisabled = isLoaderRunning;
+
   return (
     <Box
       justifyContent="flex-end"
@@ -32,6 +36,7 @@ function FormClose({ onClose }) {
       <Button
         onClick={onClose}
         type="reset"
+        disabled={isInputFieldDisabled}
         margin={{
           xs: 'auto',
           md: 'initial',
@@ -54,7 +59,9 @@ function FormContent() {
   const [messageInfo, setMessageInfo] = useState({ name: '', email: '', message: '' });
   const [isFormSubmitted, setIsFormSubmitted] = useState<boolean>(false);
   const [submitStatus, setSubmitStatus] = useState<string>(formState.DEFAULT);
-  const { toggleModalContact } = useContext(WebsitePageContext);
+  const { isLoaderRunning, toggleLoaderRunning, toggleModalContact } = useContext(WebsitePageContext);
+
+  const isInputFieldDisabled = isLoaderRunning;
 
   function handleOnClose() {
     setMessageInfo({ name: '', email: '', message: '' });
@@ -75,118 +82,86 @@ function FormContent() {
     && Boolean(messageInfo.email.length)
     && Boolean(messageInfo.message.length);
 
-  const isFormContentDisplay = formState.DEFAULT ? 'block' : 'none';
-
   return (
     <form onSubmit={(e) => {
       e.preventDefault();
+      toggleLoaderRunning();
       setIsFormSubmitted(true);
       setSubmitStatus(formState.DEFAULT);
 
-      const messageDTO = {
-        name: messageInfo.name,
-        email: messageInfo.email,
-        message: messageInfo.message,
-      };
+      // const messageDTO = {
+      //   name: messageInfo.name,
+      //   email: messageInfo.email,
+      //   message: messageInfo.message,
+      // };
 
       setSubmitStatus(formState.DONE);
     }}
     >
       <FormClose onClose={handleOnClose} />
 
-      {!isFormSubmitted && submitStatus === formState.DEFAULT && (
-        <Box>
-          <Text
-            variant="subTitle"
-            tag="h1"
-            color="secondary.main"
-          >
-            Entre em contato comigo
+      <Box>
+        <Text
+          variant="subTitle"
+          tag="h1"
+          color="secondary.main"
+        >
+          Entre em contato comigo
           </Text>
 
-          <Text
-            variant="paragraph1"
-            tag="p"
-            color="quaternary.main"
-            marginBottom="32px"
-          >
-            Envie uma mensagem diretamente para mim,
-            vou fazer o possível pra te responder
-            o mais breve possível.
+        <Text
+          variant="paragraph1"
+          tag="p"
+          color="quaternary.main"
+          marginBottom="32px"
+        >
+          Envie uma mensagem diretamente para mim,
+          vou fazer o possível pra te responder
+          o mais breve possível.
           </Text>
 
-          <div>
-            <TextField
-              placeholder="Nome"
-              name="name"
-              value={messageInfo.name}
-              onChange={handleInputChange}
-            />
-          </div>
 
-          <div>
-            <TextField
-              placeholder="E-mail"
-              name="email"
-              value={messageInfo.email}
-              onChange={handleInputChange}
-            />
-          </div>
+        <TextField
+          placeholder="Nome"
+          disabled={isInputFieldDisabled}
+          name="name"
+          value={messageInfo.name}
+          onChange={handleInputChange}
+        />
 
-          <div>
-            <TextField
-              placeholder="Mensagem"
-              name="message"
-              value={messageInfo.message}
-              onChange={handleInputChange}
-            />
-          </div>
+        <TextField
+          placeholder="E-mail"
+          disabled={isInputFieldDisabled}
+          name="email"
+          value={messageInfo.email}
+          onChange={handleInputChange}
+        />
 
-          <Button
-            variant="primary.light"
-            type="submit"
-            disabled={!isFormInputValid}
-            fullWidth
-          >
-            Enviar
-          </Button>
-        </Box>
-      )}
+        <TextField
+          placeholder="Mensagem"
+          disabled={isInputFieldDisabled}
+          name="message"
+          value={messageInfo.message}
+          onChange={handleInputChange}
+        />
 
-      {isFormSubmitted && submitStatus === formState.DONE && (
-        <Box
-          display="flex"
-          justifyContent="center"
+        <Button
+          variant="primary.light"
+          type="submit"
+          disabled={isInputFieldDisabled}
+          fullWidth
         >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie-container basic"
-            config={{ animationData: successAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
-      )}
-
-      {isFormSubmitted && submitStatus === formState.ERROR && (
-        <Box
-          display="flex"
-          justifyContent="center"
-        >
-          <Lottie
-            width="150px"
-            height="150px"
-            className="lottie-container basic"
-            config={{ animationData: errorAnimation, loop: false, autoplay: true }}
-          />
-        </Box>
-      )}
-
+          Enviar
+        </Button>
+      </Box>
     </form>
   );
 }
 
 // eslint-disable-next-line react/prop-types
 export function FormContact({ props }) {
+  const { isLoaderRunning } = useContext(WebsitePageContext);
+
   return (
     <Grid.Row
       flex={1}
@@ -203,6 +178,7 @@ export function FormContact({ props }) {
       >
         <BorderedBox
           flex={1}
+          disabled={isLoaderRunning}
           display="flex"
           boxShadow="-10px 0px 24px rgba(7, 12, 14, 0.1)"
           flexDirection="column"
@@ -220,7 +196,9 @@ export function FormContact({ props }) {
               md: '64px',
             }}
           >
-            <Loader>
+            <Loader
+              isRunning={isLoaderRunning}
+            >
               <FormContent />
             </Loader>
 
