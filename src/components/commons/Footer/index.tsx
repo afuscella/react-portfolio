@@ -11,7 +11,7 @@ export function Footer() {
       <Text
         variant="paragraph1"
         tag="a"
-        href="https://github.com/afuscella"
+        href="https://github.com/oarthursilva"
         target="_blank"
         color="secondary.light"
         textAlign={{

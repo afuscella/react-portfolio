@@ -12,19 +12,15 @@ export function SocialMedias() {
   const links = [{
     id: 1,
     media: 'github',
-    uri: 'https://github.com/afuscella/',
+    uri: 'https://github.com/oarthursilva/',
   }, {
     id: 2,
     media: 'linkedin',
     uri: 'https://www.linkedin.com/in/afuscella/',
   }, {
-    id: 3,
-    media: 'globe',
-    uri: 'https://arrayoutofindex.wordpress.com/',
-  }, {
     id: 4,
     media: 'mail',
-    uri: 'mailto:fuscellaarthur@gmail.com',
+    uri: 'mailto:arthur.silva@fuscella.com',
   },
   ];
 

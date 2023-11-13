@@ -49,9 +49,8 @@ export function About() {
                 }}
               >
                 Arthur Fuscella Silva is bachelor degree in Computer
-                Science and works with SAP since 2008,
-                being 10+ years experience as consultant. Also, has excellent communication skills,
-                rapid learning, hard working and self-motivated.
+                Science and works with SAP since 2008.
+                Rapid learning, hard working and self-motivated.
 
               </Text>
 
@@ -63,8 +62,8 @@ export function About() {
                   xs: 'start',
                 }}
               >
-                I have the Portuguese citizenship and European passport,
-                full available for business travels.
+                I am Brazilian who have the Portuguese citizenship and European passport, 
+                welcome aboard.
               </Text>
 
             </section>

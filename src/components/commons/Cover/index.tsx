@@ -74,7 +74,7 @@ export function Cover({ ...props }) {
         </CoverWrapper.Left>
 
         <CoverWrapper.Right>
-          <img src="images/me.jfif" alt="myself" />
+          <img src="images/me.jfif" alt="myself" width={'250px'} />
         </CoverWrapper.Right>
       </CoverWrapper.Content>
 
@@ -95,7 +95,7 @@ export function Cover({ ...props }) {
               toggleModalContact();
             }}
           >
-            Entre em contato
+            Send me a message
         </Button>
         </Grid.Row>
       </CoverWrapper.Bottom>

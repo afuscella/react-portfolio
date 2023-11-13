@@ -48,7 +48,7 @@ function FormClose({ onClose }) {
           tag="span"
           color="quaternary.light"
         >
-          Fechar [X]
+          Close [X]
         </Text>
       </Button>
     </Box>
@@ -106,7 +106,7 @@ function FormContent() {
           tag="h1"
           color="secondary.main"
         >
-          Entre em contato comigo
+          Send me a message
           </Text>
 
         <Text
@@ -115,11 +115,8 @@ function FormContent() {
           color="quaternary.main"
           marginBottom="32px"
         >
-          Envie uma mensagem diretamente para mim,
-          vou fazer o possível pra te responder
-          o mais breve possível.
-          </Text>
-
+          Send me a direct message, I will do my best to respond to you as soon as possible.
+        </Text>
 
         <TextField
           placeholder="Nome"
